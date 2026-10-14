@@ -38,3 +38,17 @@ testsuite global:
         assert eval (any("Riou" in c[0] for c in CREDITOS_IMAGENES))
         click "Volver"
         assert screen "main_menu" timeout 5
+
+    testcase narracion:
+        run Start("prueba_narracion")
+        assert screen "bloque" timeout 5
+        assert eval (progreso("prueba_01") == ("prueba", 1, 3))
+        assert eval (kicker() == "CAP. 2 · DEL HOMO SAPIENS AL NEOLÍTICO")
+        assert eval (voz_de("no_existe") == "audio/voz/no_existe.ogg")
+        advance
+        assert eval (renpy.get_screen("bloque").scope["posicion"] == "lado") timeout 5
+        keysym "K_PAGEDOWN"
+        assert eval (renpy.get_screen("bloque").scope["posicion"] == "abajo") timeout 5
+        keysym "K_LEFT"
+        assert eval (renpy.get_screen("bloque").scope["posicion"] == "lado") timeout 5
+
