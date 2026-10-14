@@ -1,0 +1,18 @@
+# Registro de imágenes del juego (spec §5). Una entrada por imagen; es la única fuente de los créditos.
+# Campos obligatorios: id, uso, tinta, url, pagina_fuente, autor, obra, anio, licencia, atribucion.
+# Opcionales: recorte ([x, y, ancho, alto] o "auto"), rotar (grados, sentido horario),
+# encaje ("cubrir" | "editorial"), centrado ([x, y] de 0 a 1), mapa ([lon_min, lat_min, lon_max, lat_max]).
+
+[[imagen]]
+id = "menu_fondo"
+uso = "fondo"
+tinta = "archivo"
+url = "https://upload.wikimedia.org/wikipedia/commons/7/74/An_ideal_landscape_in_the_Quaternary_epoch_with_bears%2C_elks_Wellcome_V0023204.jpg"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:An_ideal_landscape_in_the_Quaternary_epoch_with_bears,_elks_Wellcome_V0023204.jpg"
+autor = "Édouard Riou (grabado, a partir de E. Meunier)"
+obra = "La Terre avant le déluge (L. Figuier), lámina 10: paisaje ideal del Cuaternario"
+anio = 1863
+licencia = "CC BY 4.0"
+atribucion = "É. Riou, La Terre avant le déluge (1863), lámina 10. Wellcome Collection, CC BY 4.0."
+recorte = [63, 180, 2960, 1665]
+notas = "Sin el pie impreso."
