@@ -176,3 +176,70 @@ obra = "London: A Pilgrimage, «Over London – by Rail»"
 anio = 1872
 licencia = "Dominio público"
 atribucion = "G. Doré, «Over London – by Rail», London: A Pilgrimage (1872). Yale Center for British Art, dominio público."
+
+[[imagen]]
+id = "cap1_fuego"
+uso = "fondo"
+tinta = "sabana"
+rotar = 90
+recorte = "auto"
+url = "https://iiif.archive.org/iiif/primitiveman00figuiala$71/full/1800,/0/default.jpg"
+pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
+autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
+obra = "Primitive Man, fig. 7: la producción del fuego"
+anio = 1870
+licencia = "Dominio público"
+atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 7. Internet Archive, dominio público."
+
+[[imagen]]
+id = "cap1_caza"
+uso = "fondo"
+tinta = "glaciacion"
+rotar = 90
+recorte = "auto"
+url = "https://iiif.archive.org/iiif/primitiveman00figuiala$83/full/1800,/0/default.jpg"
+pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
+autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
+obra = "Primitive Man, fig. 16: el hombre en la época del gran oso y el mamut"
+anio = 1870
+licencia = "Dominio público"
+atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 16. Internet Archive, dominio público."
+
+[[imagen]]
+id = "lamina_ciervo"
+uso = "lamina"
+tinta = "glaciacion"
+recorte = [100, 1560, 800, 560]
+url = "https://iiif.archive.org/iiif/primitiveman00figuiala$141/full/1800,/0/default.jpg"
+pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
+autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
+obra = "Primitive Man, fig. 52: la caza en la época del reno (detalle del ciervo)"
+anio = 1870
+licencia = "Dominio público"
+atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 52. Internet Archive, dominio público."
+
+[[imagen]]
+id = "lamina_reno"
+uso = "lamina"
+tinta = "glaciacion"
+recorte = [160, 560, 860, 1100]
+url = "https://iiif.archive.org/iiif/primitiveman00figuiala$123/full/1800,/0/default.jpg"
+pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
+autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
+obra = "Primitive Man, fig. 39: el hombre de la época del reno (detalle)"
+anio = 1870
+licencia = "Dominio público"
+atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 39. Internet Archive, dominio público."
+
+[[imagen]]
+id = "cap1_mapa"
+uso = "mapa"
+tinta = "glaciacion"
+mapa = [-15, 20, 135, 75]
+url = "https://naciscdn.org/naturalearth/110m/physical/ne_110m_land.zip"
+pagina_fuente = "https://www.naturalearthdata.com/downloads/110m-physical-vectors/"
+autor = "Natural Earth"
+obra = "Land, 1:110m"
+anio = "s. f."
+licencia = "Dominio público"
+atribucion = "Mapa dibujado con datos de Natural Earth (naturalearthdata.com), dominio público."

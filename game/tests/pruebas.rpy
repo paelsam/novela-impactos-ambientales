@@ -185,3 +185,18 @@ testsuite global:
         advance until screen "decision" timeout 60
         click "Por la relación"
         advance until eval (capitulo_actual == "cap1") timeout 120
+
+    testcase cap1:
+        run Start("cap1")
+        assert screen "portada" timeout 10
+        advance until screen "explorar" timeout 240
+        click "China: ciervos"
+        assert screen "ficha" timeout 5
+        click "Volver al paisaje"
+        click "Continuar"
+        advance until screen "quiz" timeout 60
+        click "Porque se hacía con instrumentos"
+        assert eval (respondidas.get("cap1_quiz") is True) timeout 5
+        advance until screen "decision" timeout 60
+        click "Seguir la manada"
+        advance until eval (capitulo_actual == "cap2") timeout 120
