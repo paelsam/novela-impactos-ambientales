@@ -10,8 +10,14 @@ tinta de su ambiente y se exporta a game/images/. Si falta su licencia, se detie
 
 from __future__ import annotations
 
+import argparse
+import hashlib
 import random
+import sys
+import time
 import tomllib
+import urllib.parse
+import urllib.request
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -20,6 +26,10 @@ from PIL import Image, ImageDraw, ImageFilter, ImageOps
 
 RAIZ = Path(__file__).parent
 REGISTRO = RAIZ / "fuentes.toml"
+CACHE = RAIZ / ".cache" / "ilustraciones"
+IMAGENES = RAIZ / "game" / "images"
+CREDITOS = RAIZ / "game" / "creditos_generados.rpy"
+AGENTE = "FragilidadVN/2.0 (proyecto educativo, Universidad del Valle)"
 
 USOS = ("fondo", "lamina", "mapa")
 ENCAJES = ("cubrir", "editorial")
@@ -266,4 +276,106 @@ def generar_ui(destino: Path = GUI) -> None:
     filete = Image.new("RGBA", (16, 16), (0, 0, 0, 0))   # filete musgo del "Por qué"
     ImageDraw.Draw(filete).rectangle([0, 0, 4, 15], fill=_hex("#6B7A4B"))
     filete.save(destino / "filete.png")
+
+
+def descargar(url: str, cache: Path = CACHE, intentos: int = 4, espera: float = 3.0) -> Path:
+    """Descarga una vez y reutiliza la copia local; reintenta ante errores del servidor."""
+    cache.mkdir(parents=True, exist_ok=True)
+    sufijo = Path(urllib.parse.urlparse(url).path).suffix.lower() or ".bin"
+    destino = cache / (hashlib.sha1(url.encode()).hexdigest()[:16] + sufijo)
+    if destino.exists():
+        return destino
+    for intento in range(1, intentos + 1):
+        try:
+            peticion = urllib.request.Request(url, headers={"User-Agent": AGENTE})
+            with urllib.request.urlopen(peticion, timeout=120) as respuesta:
+                destino.write_bytes(respuesta.read())
+            return destino
+        except OSError as error:   # URLError y HTTPError heredan de OSError
+            if intento == intentos:
+                raise RuntimeError(f"No se pudo descargar {url}: {error}") from error
+            time.sleep(espera * intento)
+
+
+def escapar_renpy(texto: str) -> str:
+    """Ren'Py interpreta [ ] y { } en los textos: se duplican para mostrarlos literales."""
+    return texto.replace("[", "[[").replace("{", "{{")
+
+
+def generar_creditos(imagenes: list[Imagen]) -> str:
+    vistas, filas = set(), []
+    for img in imagenes:
+        clave = (img.atribucion, img.obra, img.pagina_fuente)
+        if clave in vistas:
+            continue
+        vistas.add(clave)
+        filas.append(f"    ({escapar_renpy(img.atribucion)!r}, {escapar_renpy(img.obra)!r}, "
+                     f"{escapar_renpy(img.pagina_fuente)!r}),")
+    return "\n".join(["# Generado por ilustraciones.py desde fuentes.toml. No editar a mano.", "",
+                      "define CREDITOS_IMAGENES = [", *filas, "]", ""])
+
+
+def rejilla(img: Image.Image) -> Image.Image:
+    """Copia con líneas cada 5 % (rojas verticales, azules horizontales) para medir posiciones."""
+    img = img.convert("RGB").copy()
+    d = ImageDraw.Draw(img)
+    for i in range(1, 20):
+        x, y = round(img.width * i / 20), round(img.height * i / 20)
+        d.line([(x, 0), (x, img.height)], fill=(220, 0, 0), width=1)
+        d.text((x + 3, 3), str(i * 5), fill=(220, 0, 0))
+        d.line([(0, y), (img.width, y)], fill=(0, 0, 220), width=1)
+        d.text((3, y + 3), str(i * 5), fill=(0, 0, 220))
+    return img
+
+
+def salida_de(imagen: Imagen) -> Path:
+    return IMAGENES / ("laminas" if imagen.uso == "lamina" else "fondos") / f"{imagen.id}.jpg"
+
+
+def procesar_imagen(imagen: Imagen) -> Image.Image:
+    origen = descargar(imagen.url)
+    if imagen.uso == "mapa":
+        return dibujar_mapa(origen, imagen.mapa, imagen.tinta)
+    with Image.open(origen) as original:
+        return encajar(rotar_y_recortar(original, imagen), imagen)
+
+
+def procesar(registro: Path = REGISTRO) -> int:
+    try:
+        imagenes = cargar_registro(registro)
+    except ErrorRegistro as error:
+        print(error, file=sys.stderr)
+        return 1
+    for imagen in imagenes:
+        destino = salida_de(imagen)
+        destino.parent.mkdir(parents=True, exist_ok=True)
+        procesar_imagen(imagen).save(destino, quality=85)
+        print(f"✓ {destino.relative_to(RAIZ)}")
+    generar_ui(GUI)
+    CREDITOS.write_text(generar_creditos(imagenes), encoding="utf-8")
+    print(f"Listo: {len(imagenes)} imágenes, piezas de interfaz y créditos.")
+    return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description="Procesa las ilustraciones del juego desde fuentes.toml.")
+    parser.add_argument("--rejilla", metavar="ID",
+                        help="guarda .cache/rejilla_ID.png con una rejilla del 5 %% para medir posiciones")
+    args = parser.parse_args(argv)
+    if not args.rejilla:
+        return procesar()
+    imagen = next((i for i in cargar_registro() if i.id == args.rejilla), None)
+    if imagen is None:
+        print(f"No hay ninguna imagen con id {args.rejilla} en fuentes.toml", file=sys.stderr)
+        return 1
+    ruta = RAIZ / ".cache" / f"rejilla_{imagen.id}.png"
+    ruta.parent.mkdir(parents=True, exist_ok=True)
+    rejilla(procesar_imagen(imagen)).save(ruta)
+    print(f"Rejilla guardada en {ruta.relative_to(RAIZ)}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
+
 

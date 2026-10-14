@@ -1,10 +1,15 @@
+import urllib.error
+import urllib.request
+
 import pytest
 import shapefile
 from PIL import Image, ImageDraw
 
+import ilustraciones
 from ilustraciones import (
-    TINTAS, UI, ErrorRegistro, Imagen, _hex, aplicar_tinta, cargar_registro, dibujar_mapa, encajar,
-    generar_ui, pieza, posicion_en_mapa, recorte_automatico, rotar_y_recortar,
+    TINTAS, UI, ErrorRegistro, Imagen, _hex, aplicar_tinta, cargar_registro, descargar, dibujar_mapa,
+    encajar, generar_creditos, generar_ui, pieza, posicion_en_mapa, procesar, recorte_automatico,
+    rejilla, rotar_y_recortar,
 )
 
 ENTRADA = '''
@@ -176,4 +181,50 @@ def test_pieza_tiene_esquinas_transparentes_y_centro_relleno():
 def test_generar_ui_escribe_todas_las_piezas(tmp_path):
     generar_ui(tmp_path)
     assert sorted(p.stem for p in tmp_path.glob("*.png")) == sorted([*UI, "filete"])
+
+
+def test_descargar_usa_cache(tmp_path):
+    origen = tmp_path / "x.jpg"
+    Image.new("RGB", (10, 10)).save(origen)
+    ruta = descargar(origen.as_uri(), tmp_path / "cache")
+    assert ruta.read_bytes() == origen.read_bytes() and ruta.suffix == ".jpg"
+    origen.unlink()
+    assert descargar(origen.as_uri(), tmp_path / "cache") == ruta
+
+
+def test_descargar_reintenta_ante_un_error(tmp_path, monkeypatch):
+    origen = tmp_path / "x.png"
+    Image.new("RGB", (4, 4)).save(origen)
+    real = urllib.request.urlopen
+    llamadas = []
+
+    def falla_una_vez(peticion, timeout=None):
+        llamadas.append(1)
+        if len(llamadas) == 1:
+            raise urllib.error.URLError("servidor caído")
+        return real(peticion, timeout=timeout)
+
+    monkeypatch.setattr(ilustraciones.urllib.request, "urlopen", falla_una_vez)
+    ruta = descargar(origen.as_uri(), tmp_path / "cache", espera=0)
+    assert ruta.read_bytes() == origen.read_bytes() and len(llamadas) == 2
+
+
+def test_creditos_escapa_y_no_repite():
+    a = entrada(atribucion="É. Riou [1863] {CC BY}", obra="Lámina 10", pagina_fuente="https://x")
+    b = entrada(id="y", atribucion="É. Riou [1863] {CC BY}", obra="Lámina 10", pagina_fuente="https://x")
+    texto = generar_creditos([a, b])
+    assert texto.startswith("# Generado por ilustraciones.py")
+    assert texto.count("Riou") == 1
+    assert "[[1863]" in texto and "{{CC BY}" in texto
+
+
+def test_rejilla_conserva_el_tamano():
+    assert rejilla(degradado(200, 100)).size == (200, 100)
+
+
+def test_procesar_rechaza_registro_invalido(tmp_path, capsys):
+    ruta = tmp_path / "fuentes.toml"
+    ruta.write_text('[[imagen]]\nid = "x"\n', encoding="utf-8")
+    assert procesar(ruta) == 1
+    assert "faltan" in capsys.readouterr().err
 
