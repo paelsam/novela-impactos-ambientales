@@ -1,93 +1,109 @@
-# La fragilidad ambiental de la cultura
+# Los orígenes: del ecosistema a la cultura
 
-Juego educativo (novela visual) hecho con [Ren'Py](https://www.renpy.org/), basado en la Introducción y los tres primeros capítulos de *La fragilidad ambiental de la cultura*, de Augusto Ángel Maya. Recorre el Paleolítico, el Homo sapiens y el Neolítico para mostrar que la cultura y la naturaleza se transforman mutuamente.
+Novela visual interactiva (Ren'Py 8.5) para el curso **Impactos Ambientales** (Universidad del Valle, docente Diana Marcela Mendoza). Presenta la Introducción y los Caps. 1–3 de *La fragilidad ambiental de la cultura* (Augusto Ángel Maya, pp. 6–27) con paisajes de grabado entintados, voz narrada, observaciones, quices y decisiones.
 
-## Requisitos
+| Parte | Integrante | Archivo |
+| --- | --- | --- |
+| Introducción · pp. 6–9 | Elkin Samir Angulo Panameño | `game/capitulos/intro.rpy` |
+| Cap. 1 · El lejano Paleolítico · pp. 10–12 | Sebastián Bolaños Morales | `game/capitulos/cap1.rpy` |
+| Cap. 2 · Del Homo sapiens al Neolítico · pp. 13–17 | María Fernanda Cano Cobo | `game/capitulos/cap2.rpy` |
+| Cap. 3 · El cercano Neolítico · pp. 18–27 | Javier Felipe Contreras Díaz | `game/capitulos/cap3.rpy` |
+| Reflexión final (Buenaventura, la semilla y el árbol) | Todo el equipo | `game/capitulos/final.rpy` |
 
-- [Ren'Py 8.5](https://www.renpy.org/latest.html) para ejecutar el juego.
-- [uv](https://docs.astral.sh/uv/) solo para regenerar las voces de la narración.
+Los textos narrados son los del guion del equipo (`references/`). El cierre sobre Buenaventura es una conexión preparada por el equipo, no un dato del libro.
 
-## Ejecutar el juego
+## Presentar en Google Meet
 
-Instala el SDK de Ren'Py una sola vez (Linux):
+1. Genera la versión web (ver más abajo) y sírvela: `python3 -m http.server 8000 --directory .cache/web`.
+2. Abre `http://localhost:8000` en **Chrome**.
+3. En Meet: **Presentar → Una pestaña →** la del juego, y marca **«Compartir también el audio de la pestaña»**.
+4. Respaldo sin internet ni navegador: el paquete de escritorio (`.cache/dist/LosOrigenes-2.0-pc.zip`).
+
+Cada parte dura unos 3 minutos de voz, más las observaciones, el quiz y la decisión.
+
+## Controles
+
+| Acción | Teclas |
+| --- | --- |
+| Avanzar | clic · Espacio · → · AvPág |
+| Retroceder | ← · RePág |
+| Repetir la voz | R |
+| Modo automático (avanza al terminar la voz) | A |
+| Elegir opción en quiz o decisión | 1 · 2 · 3 |
+| Pausa y ajustes (reducir movimiento, voz, volumen) | Esc o clic derecho |
+
+## Requisitos y ejecución
+
+- Ren'Py 8.5.3 SDK en `~/renpy-8.5.3-sdk` (o `RENPY_SDK=/ruta`), descargable en [renpy.org](https://www.renpy.org/latest.html).
+- [uv](https://docs.astral.sh/uv/) para los scripts de Python.
 
 ```bash
-cd ~
-curl -LO https://www.renpy.org/dl/8.5.3/renpy-8.5.3-sdk.tar.bz2
-tar xjf renpy-8.5.3-sdk.tar.bz2 && rm renpy-8.5.3-sdk.tar.bz2
+~/renpy-8.5.3-sdk/renpy.sh .         # jugar
+~/renpy-8.5.3-sdk/renpy.sh . lint    # revisar el script
 ```
-
-Desde la carpeta del proyecto:
-
-```bash
-~/renpy-8.5.3-sdk/renpy.sh .        # jugar
-~/renpy-8.5.3-sdk/renpy.sh . lint   # revisar errores del script
-```
-
-Con el Ren'Py Launcher (`~/renpy-8.5.3-sdk/renpy.sh` sin argumentos): en **Preferences → Projects Directory** elige la carpeta que *contiene* este proyecto. El proyecto aparece en la lista; selecciónalo y pulsa **Launch Project**.
-
-Ren'Py exige que el contenido del juego esté en la carpeta `game/`.
 
 ## Estructura
 
 ```text
 .
 ├── game/
-│   ├── script.rpy           # historia: diálogos, tarjetas narradas y preguntas
-│   ├── screens.rpy          # interfaz: menú, diálogo, tarjetas, HUD, preguntas y final
-│   ├── options.rpy          # configuración: nombre, versión, resolución 960×540
-│   ├── tl/None/common.rpym  # textos internos de Ren'Py traducidos al español
-│   ├── images/              # fondos (bg_*.png) y escenas de las tarjetas (scenes/)
-│   └── audio/               # ambientes (amb_*), efectos (sfx_*) y narraciones (voice/)
-├── generar_voz.py           # genera game/audio/voice/*.wav con Kokoro TTS
-├── pyproject.toml           # dependencias de generar_voz.py
-└── uv.lock
+│   ├── capitulos/        # contenido: una parte por integrante
+│   ├── sistema/          # capítulos, voz, exploración, respuestas
+│   ├── pantallas/        # menú, narración, observación, quiz, notas, pausa
+│   ├── images/           # fondos/ y laminas/ (generados por ilustraciones.py)
+│   ├── gui/              # piezas de interfaz (generadas)
+│   ├── fonts/            # Literata y Atkinson Hyperlegible
+│   ├── audio/            # ambiente/, sfx/, voz/ (generadas), voz/grabadas/ (propias)
+│   └── tests/            # recorridos automáticos (no viajan en los paquetes)
+├── fuentes.toml          # registro de imágenes: URL, recorte, tinta, licencia
+├── ilustraciones.py      # fuentes.toml → imágenes entintadas, mapas, interfaz, créditos
+├── generar_voz.py        # guion → voces OGG con Kokoro
+├── probar_juego.sh       # lint + recorridos automáticos
+└── tests/                # pytest de los scripts y de las reglas del guion
 ```
 
-## Cómo funciona
+## Editar un capítulo
 
-Orden del recorrido: Prólogo → Introducción → Paleolítico → Homo sapiens → Neolítico → Reflexión final.
+- Cada línea hablada es **una sola línea** con `id` único y sin `[...]`: `n "Texto." id cap2_03` (`nl` la muestra en el panel lateral). La voz se busca por ese `id`.
+- Observación: `call explorar(lista_de_puntos)` con `Punto("id", x, y, "Etiqueta", "label_de_la_ficha")`; `x` e `y` son fracciones de la imagen.
+- Quiz: `menu (screen="quiz", quiz="capN_quiz", pagina="p. 15")` con exactamente una opción `(correcta=True)`. Decisión: `menu (screen="decision", pagina=…)`; cada opción termina en un `segun "…" id …`.
+- Nota de campo (`nota`) e idea clave (`clave`) cierran cada parte. El índice y las ideas clave están en `game/sistema/capitulos.rpy`.
 
-- **Tarjetas narradas** (`screen mini_story`): cada etapa tiene 4, con ilustración, texto y voz. La voz arranca sola y la tarjeta avanza cuando termina el audio. **SALTAR** avanza antes y **REPETIR VOZ** la reproduce otra vez. Si falta el WAV, la tarjeta espera a que se pulse SALTAR.
-- **Preguntas** (`label quiz`): al final de cada etapa. Cada acierto suma 100 puntos (máximo 400). Cada error muestra una pista, suma una en «Pistas utilizadas» y repite la pregunta.
-- **Pantalla final**: muestra la puntuación y las pistas usadas. **VOLVER A JUGAR** regresa al menú principal.
+## Imágenes y voces
 
-Para añadir una tarjeta o una pregunta, copia una llamada existente en `game/script.rpy`:
-
-```renpy
-call screen mini_story("TÍTULO", "images/scenes/archivo.png", "Texto en pantalla.", "audio/voice/archivo.wav")
-
-call quiz(
-    "¿Pregunta?",
-    ["A. ...", "B. ...", "C. ..."],
-    correct=1,  # posición de la respuesta correcta, empezando en 0
-    praise="Mensaje al acertar.",
-    hint="Pista al fallar.",
-)
+```bash
+uv run ilustraciones.py                    # descarga (caché en .cache/) y procesa todo
+uv run ilustraciones.py --rejilla <id>     # rejilla del 5 % para colocar marcadores
+uv run --group voz generar_voz.py          # genera solo las líneas nuevas o cambiadas
+uv run --group voz generar_voz.py --revisar    # lista líneas sin voz o huérfanas
+uv run --group voz generar_voz.py --duracion   # minutos de voz por parte
 ```
 
-## Regenerar las voces
+- Toda imagen entra por `fuentes.toml` con licencia y atribución; `game/creditos_generados.rpy` se genera solo.
+- Para usar una grabación propia, guarda `game/audio/voz/grabadas/<id>.ogg`: tiene prioridad sobre la voz sintética y el script nunca la toca.
+- La voz es Kokoro-82M (`em_alex`). El motor de pronunciación (espeak-ng) necesita que la ruta del proyecto tenga menos de 160 caracteres.
 
-Los 16 WAV ya están en `game/audio/voice/`. Solo hay que regenerar uno si cambia su texto.
+## Pruebas
 
-1. Actualiza el texto en `NARRATIONS`, dentro de `generar_voz.py`. Debe coincidir con la tarjeta de `script.rpy`.
-2. Borra el WAV correspondiente. El script conserva los que ya existen.
-3. Ejecuta:
+```bash
+uv run pytest -q          # scripts y reglas del guion (sin red)
+./probar_juego.sh         # lint (0 avisos) + recorridos sin pantalla (mutter headless)
+./probar_juego.sh cap2    # un solo recorrido
+```
 
-   ```bash
-   uv run generar_voz.py
-   ```
+`probar_juego.sh` falla si algún caso queda sin ejecutar, aunque Ren'Py imprima `Status: PASSED`.
 
-La primera vez, uv crea el entorno `.venv` con Python 3.12 y las dependencias (~1,3 GB, con PyTorch solo para CPU), y Kokoro descarga el modelo Kokoro-82M desde Hugging Face (~330 MB). Cada narración tarda unos segundos en CPU.
+## Compilar
 
-Si aparece `Error processing file '.../espeak-ng-data/phontab'`, la ruta del proyecto es demasiado larga: espeak-ng no admite rutas de datos de más de 160 caracteres. Mueve el proyecto a una carpeta con una ruta más corta.
+```bash
+~/renpy-8.5.3-sdk/renpy.sh ~/renpy-8.5.3-sdk/launcher web_build "$PWD" --destination "$PWD/.cache/web"
+~/renpy-8.5.3-sdk/renpy.sh ~/renpy-8.5.3-sdk/launcher distribute --package pc --destination "$PWD/.cache/dist" "$PWD"
+```
 
-**Voz y licencia:** Kokoro-82M se publica bajo licencia Apache-2.0. La voz `em_alex` es masculina, sintética y en español, pero no tiene acento colombiano. Escucha las narraciones nuevas antes de distribuir el juego para revisar pausas y pronunciación.
+La versión web necesita el módulo `renpy-8.5.3-web.zip` descomprimido dentro del SDK.
 
-## Historial
+## Créditos y licencias
 
-- **Reestructuración (oct. 2026):** proyecto uv con un único README, archivos sin uso eliminados y una sola definición por pantalla. El HUD, las preguntas y la pantalla final ahora usan el diseño neo-moderno de la 1.4, que antes quedaba tapado por las versiones antiguas de `script.rpy`. Arreglado el avance automático de las tarjetas, que no pasaba a la siguiente al terminar la voz.
-- **1.6:** narración automática en la introducción y en las 12 tarjetas, botones SALTAR y REPETIR VOZ, y panel de texto más compacto.
-- **1.5:** generador de voz local con Kokoro.
-- **1.4:** fondos renovados e interfaz neo-moderna (azul profundo, paneles translúcidos y acentos turquesa).
-- **1.3:** una ilustración propia para cada una de las 12 tarjetas.
+- Libro: Augusto Ángel Maya, *La fragilidad ambiental de la cultura* (2015).
+- Imágenes: grabados y fotografías de dominio público o con licencia abierta (CC BY, CC BY-SA); autor, obra, licencia y enlace de cada una en `fuentes.toml` y en la pantalla **Créditos** del juego.
+- Voz: Kokoro-82M. Tipografías: Literata y Atkinson Hyperlegible (SIL OFL). Motor: Ren'Py (MIT/LGPL).

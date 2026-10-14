@@ -228,3 +228,45 @@ testsuite global:
         advance until screen "fin" timeout 120
         click "Volver al menú"
         assert screen "main_menu" timeout 10
+
+    testcase completo:
+        click "Comenzar"
+        advance until screen "explorar" timeout 240
+        click "Continuar"
+        advance until screen "quiz" timeout 240
+        click "Una historia contada solo desde la política"
+        advance until screen "decision" timeout 60
+        click "Por la relación"
+        advance until eval (capitulo_actual == "cap1") timeout 120
+        advance until screen "explorar" timeout 240
+        click "Continuar"
+        advance until screen "quiz" timeout 60
+        click "Porque ya había cultivos"
+        assert eval (respondidas.get("cap1_quiz") is False) timeout 5
+        advance until screen "decision" timeout 60
+        click "Cazar todos"
+        advance until eval (capitulo_actual == "cap2") timeout 120
+        advance until screen "explorar" timeout 240
+        click "Continuar"
+        advance until screen "explorar" timeout 240
+        click "Continuar"
+        advance until screen "quiz" timeout 120
+        click "Cuando la fauna se agota"
+        advance until screen "decision" timeout 60
+        click "Para tener más tiempo libre"
+        advance until eval (capitulo_actual == "cap3") timeout 120
+        advance until screen "explorar" timeout 240
+        click "Continuar"
+        advance until screen "explorar" timeout 240
+        click "Continuar"
+        advance until screen "explorar" timeout 240
+        click "Continuar"
+        advance until screen "quiz" timeout 120
+        click "Porque nombran a las especies que sobran"
+        advance until screen "decision" timeout 60
+        click "Vuelven a la caza"
+        advance until eval (capitulo_actual == "final") timeout 120
+        advance until screen "fin" timeout 240
+        assert eval (aciertos == 3 and len(respondidas) == 4)
+        click "Créditos"
+        assert screen "creditos" timeout 5
