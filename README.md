@@ -14,8 +14,8 @@ Los textos narrados son los del guion del equipo (`references/`). El cierre sobr
 
 ## Presentar en Google Meet
 
-1. Genera la versión web (ver más abajo) y sírvela: `python3 -m http.server 8000 --directory .cache/web`.
-2. Abre `http://localhost:8000` en **Chrome**.
+1. Abre la versión publicada en Vercel (ver «Publicar en Vercel») o, sin internet, genérala y sírvela: `./desplegar.sh --solo-compilar && python3 -m http.server 8000 --directory .cache/web`.
+2. Ábrela en **Chrome** (`http://localhost:8000` en local).
 3. En Meet: **Presentar → Una pestaña →** la del juego, y marca **«Compartir también el audio de la pestaña»**.
 4. Respaldo sin internet ni navegador: el paquete de escritorio (`.cache/dist/LosOrigenes-2.0-pc.zip`).
 
@@ -59,6 +59,7 @@ Cada parte dura unos 3 minutos de voz, más las observaciones, el quiz y la deci
 ├── ilustraciones.py      # fuentes.toml → imágenes entintadas, mapas, interfaz, créditos
 ├── generar_voz.py        # guion → voces OGG con Kokoro
 ├── probar_juego.sh       # lint + recorridos automáticos
+├── desplegar.sh          # compila la versión web y la publica en Vercel (vercel.json)
 └── tests/                # pytest de los scripts y de las reglas del guion
 ```
 
@@ -101,6 +102,19 @@ uv run pytest -q          # scripts y reglas del guion (sin red)
 ```
 
 La versión web necesita el módulo `renpy-8.5.3-web.zip` descomprimido dentro del SDK.
+
+## Publicar en Vercel
+
+Vercel solo aloja la versión web ya compilada (no puede ejecutar Ren'Py), así que se compila en local y se sube la carpeta resultante:
+
+```bash
+./desplegar.sh          # vista previa con URL temporal
+./desplegar.sh --prod   # producción
+```
+
+- Requiere Node (`npx`). La primera vez pide iniciar sesión en Vercel y elegir cuenta y nombre de proyecto; el enlace queda en `.cache/vercel`.
+- `vercel.json` (cabeceras y tipos de contenido) se copia solo a la carpeta publicada. La versión web pesa unos 65 MB, por debajo del límite de los despliegues estáticos.
+- Tras cambiar texto, imágenes o voces, vuelve a ejecutar `./desplegar.sh --prod`.
 
 ## Créditos y licencias
 
