@@ -15,6 +15,15 @@ init python:
         sys.exit(1 if renpy.test.testreporter.reporter.has_failed else 0)
     renpy.test.testreporter.reporter.test_run_end = _test_run_end_and_quit
 
+    _orig_advance_execute = renpy.test.testast.Advance.execute
+    def _safe_advance_execute(self, state, t):
+        if renpy.test.testast.Advance.began_newline or (t > 0 and renpy.exports.get_screen("explorar")):
+            renpy.test.testast.next_node(self.next)
+            return None
+        return _orig_advance_execute(self, state, t)
+    renpy.test.testast.Advance.execute = _safe_advance_execute
+
+
 
 testsuite global:
     before testcase:
@@ -51,4 +60,20 @@ testsuite global:
         assert eval (renpy.get_screen("bloque").scope["posicion"] == "abajo") timeout 5
         keysym "K_LEFT"
         assert eval (renpy.get_screen("bloque").scope["posicion"] == "lado") timeout 5
+
+    testcase observacion:
+        run Start("prueba_observacion")
+        assert screen "explorar" timeout 5
+        click "Punto uno"
+        assert screen "ficha" timeout 5
+        assert eval ("uno" in vistos)
+        click "Volver al paisaje"
+        assert screen "explorar" timeout 5
+        keysym "K_2"
+        assert eval (punto_activo is not None and punto_activo.id == "dos") timeout 5
+        advance
+        assert screen "explorar" timeout 5
+        click "Continuar"
+        assert screen "bloque" timeout 5
+
 

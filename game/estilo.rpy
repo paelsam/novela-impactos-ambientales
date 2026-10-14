@@ -127,3 +127,21 @@ transform paneo:
     xalign 0.5
     yalign 0.5
     function _paneo
+
+style marca:
+    background "gui/marca.png"
+    hover_background "gui/marca_hover.png"
+    selected_background "gui/marca_vista.png"
+    xysize (56, 56)
+
+style marca_num:
+    font SANS_NEGRITA
+    size 26
+    color TINTA
+    xalign 0.5
+    yalign 0.5
+
+style marca_etiqueta:
+    background Frame("gui/marco.png", 16, 16)
+    padding (12, 8)
+
