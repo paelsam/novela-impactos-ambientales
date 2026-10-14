@@ -17,8 +17,8 @@ label cap1:
 
     # Escena 1.1 · Antes de la historia
     $ pagina = "p. 10"
-    n "Desde la perspectiva ambiental que presenta Ángel Maya, la historia comienza con el Homo sapiens. Antes de ese punto existe una zona ambigua entre la evolución biológica y la historia propiamente dicha." id cap1_01
-    n "Los instrumentos rudimentarios, como los raspadores, aparecen en el registro del Pleistoceno. El libro menciona también la posibilidad de que el hombre de Pekín utilizara el fuego como defensa hace unos 500.000 años." id cap1_02
+    n "Desde una perspectiva ambiental, la historia comienza con el Homo sapiens. Antes de ese punto existe una zona ambigua entre la evolución biológica y la historia propiamente dicha." id cap1_01
+    n "Los instrumentos rudimentarios, como los raspadores, aparecen en el registro del Pleistoceno. Es posible, además, que el hombre de Pekín utilizara el fuego como defensa hace unos 500.000 años." id cap1_02
     scene cap1_hombre at paneo with fundido
     n "Las herramientas y las pieles ayudaron a enfrentar condiciones ambientales que ya no resultaban propicias. La supervivencia empezó a depender también de recursos técnicos y de formas de adaptación cultural." id cap1_03
     $ pagina = "pp. 10–11"
@@ -32,12 +32,11 @@ label cap1:
     n "La caza de presas mayores era una empresa colectiva: requería instrumentos, organización y comunicación. Esa cooperación contribuyó a que los grupos pudieran extenderse fuera de regiones tropicales." id cap1_06
     n "La capacidad de cazar no dependía únicamente de la fuerza individual. El grupo compensaba la ausencia de garras o colmillos mediante la coordinación y el uso de herramientas." id cap1_07
     $ pagina = "p. 12"
-    scene cap1_caceria at paneo with fundido
-    n "El libro describe una especialización regional de la caza: ciervos en China; toros y caballos en España; mamuts en Rusia y Europa Central; y renos en Francia." id cap1_08
+    n "La caza se especializó según la región: ciervos en China; toros y caballos en España; mamuts en Rusia y Europa Central; y renos en Francia." id cap1_08
 
     # Escena 1.3 · Mapa de la especialización
     scene cap1_mapa with transformacion
-    n "Ángel Maya destaca la magnitud de algunos conjuntos de restos animales: cien mil caballos en Solutré y mil mamuts en Predmost. El autor interpreta esos casos como una presión insólita sobre los ecosistemas, que llega a llamar «una especie de ecocidio»." id cap1_09
+    n "Algunos conjuntos de restos animales son enormes: cien mil caballos en Solutré y mil mamuts en Predmost. Revelan una presión insólita sobre los ecosistemas, una especie de ecocidio." id cap1_09
     call explorar(cap1_puntos_mapa)
 
     scene cap1_caza at paneo with fundido
@@ -54,13 +53,13 @@ label cap1:
     menu (screen="decision", pagina="p. 12"):
         dilema "Cada año, una gran manada de caballos pasa por el mismo valle. ¿Qué hace el grupo?" id cap1_dec
         "Cazar todos los que pueda.":
-            segun "El libro presenta los restos de Solutré como señal de una caza selectiva de gran magnitud y de una presión creciente." id cap1_dec_a
+            segun "Los restos de Solutré son señal de una caza selectiva de gran magnitud y de una presión creciente." id cap1_dec_a
         "Cazar solo lo necesario.":
-            segun "Esta opción permite discutir el límite, pero el libro no describe cuotas de caza para este periodo; destaca la presión creciente sobre algunas especies." id cap1_dec_b
+            segun "Esta opción permite discutir el límite, pero no hay evidencia de cuotas de caza en este periodo; lo que se observa es la presión creciente sobre algunas especies." id cap1_dec_b
         "Seguir la manada a nuevas tierras.":
             segun "La extensión hacia nuevas zonas dio origen a culturas prehistóricas y llevó la presión a otros ecosistemas." id cap1_dec_c
 
-    nota "El libro describe a los neandertales encorvados y arrastrando los pies. Esa imagen procede de una reconstrucción de 1911 hecha a partir de un esqueleto con artritis. Hoy se sabe que caminaban erguidos y fabricaban herramientas complejas." (show_fuente="Smithsonian, Human Origins Program") id cap1_nota
+    nota "Durante mucho tiempo se describió a los neandertales encorvados y arrastrando los pies. Esa imagen procede de una reconstrucción de 1911 hecha a partir de un esqueleto con artritis. Hoy se sabe que caminaban erguidos y fabricaban herramientas complejas." (show_fuente="Smithsonian, Human Origins Program") id cap1_nota
     clave "Sin garras ni colmillos, los seres humanos se adaptaron mediante instrumentos y cooperación; al especializarse en la caza, empezaron a ejercer una presión importante sobre algunos ecosistemas." id cap1_clave
     jump cap2
 

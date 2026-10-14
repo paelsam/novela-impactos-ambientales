@@ -62,6 +62,7 @@ screen ficha(who, what, lamina=None, titulo="", leyenda="", pagina=""):
         ypos 48
         xsize 620
         has vbox
+        xfill True
         spacing 10
         hbox:
             xfill True

@@ -65,6 +65,7 @@ screen pregunta(who, what, tipo="quiz"):
         xsize 1120
         ysize 860
         has vbox
+        xfill True
         spacing 16
         hbox:
             xfill True
@@ -112,6 +113,7 @@ screen tarjeta_explicacion(etiqueta, what, pagina):
     frame:
         style "porque_marco"
         has vbox
+        xfill True
         spacing 6
         text etiqueta style "kicker"
         text what id "what" style "ficha_texto"
@@ -126,6 +128,7 @@ screen retroalimentacion(who, what):
         ypos 90
         xsize 1120
         has vbox
+        xfill True
         spacing 14
         hbox:
             xfill True
@@ -156,6 +159,7 @@ screen segun(who, what):
         ypos 110
         xsize 1120
         has vbox
+        xfill True
         spacing 14
         text _("DECISIÓN · {}").format(kicker()) style "kicker"
         frame:
@@ -166,4 +170,4 @@ screen segun(who, what):
                     style "letra"
                     text "ABC"[e.elegida] style "letra_texto"
                 text e.opciones[e.elegida] style "opcion_texto" yalign 0.5
-        use tarjeta_explicacion(_("SEGÚN EL LIBRO"), what, e.pagina)
+        use tarjeta_explicacion(_("LO QUE MUESTRA LA HISTORIA"), what, e.pagina)

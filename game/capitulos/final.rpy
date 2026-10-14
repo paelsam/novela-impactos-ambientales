@@ -18,7 +18,7 @@ label final:
     show screen resumen
     $ pagina = "p. 9"
     nl "Elegimos una imagen para resumir este recorrido: una semilla que crece hasta ser un árbol rodeado de cultivos y herramientas. A medida que la humanidad avanza, también cambia su relación con el ambiente del que depende." id final_03
-    nl "Como escribe Ángel Maya, la resiliencia cultural frente al medio es frágil. Y también: la incertidumbre es la raíz de la creatividad cultural." id final_04
+    nl "La resiliencia cultural frente al medio es frágil. Y, al mismo tiempo, la incertidumbre es la raíz de la creatividad cultural." id final_04
     nl "Les dejamos una pregunta: ¿qué instrumentos culturales, técnicos, sociales y teóricos, necesitamos hoy para responder a la crisis ambiental?" id final_05
     call screen fin
     hide screen resumen

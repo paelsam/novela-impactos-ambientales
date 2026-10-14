@@ -273,20 +273,6 @@ licencia = "Dominio público"
 atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 207. Internet Archive, dominio público."
 
 [[imagen]]
-id = "lamina_alfarero"
-uso = "lamina"
-tinta = "neolitico"
-rotar = 90
-recorte = "auto"
-url = "https://iiif.archive.org/iiif/primitiveman00figuiala$87/full/1800,/0/default.jpg"
-pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
-autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
-obra = "Primitive Man, fig. 17: el primer alfarero"
-anio = 1870
-licencia = "Dominio público"
-atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 17. Internet Archive, dominio público."
-
-[[imagen]]
 id = "lamina_hacha"
 uso = "lamina"
 tinta = "neolitico"
@@ -312,18 +298,6 @@ obra = "Land, 1:110m"
 anio = "s. f."
 licencia = "Dominio público"
 atribucion = "Mapa dibujado con datos de Natural Earth (naturalearthdata.com), dominio público."
-
-[[imagen]]
-id = "lamina_trigo"
-uso = "lamina"
-tinta = "neolitico"
-url = "https://upload.wikimedia.org/wikipedia/commons/c/cb/Illustration_Triticum_aestivum0.jpg"
-pagina_fuente = "https://commons.wikimedia.org/wiki/File:Illustration_Triticum_aestivum0.jpg"
-autor = "Otto Wilhelm Thomé"
-obra = "Flora von Deutschland, Österreich und der Schweiz: Triticum aestivum"
-anio = 1885
-licencia = "Dominio público"
-atribucion = "O. W. Thomé, Flora von Deutschland (1885), trigo. Wikimedia Commons, dominio público."
 
 [[imagen]]
 id = "lamina_cebada"
@@ -426,33 +400,6 @@ licencia = "Dominio público"
 atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 39. Internet Archive, dominio público."
 
 [[imagen]]
-id = "cap1_caceria"
-uso = "fondo"
-tinta = "glaciacion"
-recorte = "auto"
-url = "https://iiif.archive.org/iiif/primitiveman00figuiala$141/full/1800,/0/default.jpg"
-pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
-autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
-obra = "Primitive Man, fig. 52: la caza en la época del reno"
-anio = 1870
-licencia = "Dominio público"
-atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 52. Internet Archive, dominio público."
-
-[[imagen]]
-id = "cap2_abrigo"
-uso = "fondo"
-tinta = "glaciacion"
-encaje = "editorial"
-recorte = "auto"
-url = "https://iiif.archive.org/iiif/primitiveman00figuiala$127/full/1800,/0/default.jpg"
-pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
-autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
-obra = "Primitive Man, fig. 40: abrigo rocoso de Bruniquel"
-anio = 1870
-licencia = "Dominio público"
-atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 40. Internet Archive, dominio público."
-
-[[imagen]]
 id = "cap2_banquete"
 uso = "fondo"
 tinta = "glaciacion"
@@ -465,20 +412,6 @@ obra = "Primitive Man, fig. 41: un banquete en la época del reno"
 anio = 1870
 licencia = "Dominio público"
 atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 41. Internet Archive, dominio público."
-
-[[imagen]]
-id = "cap2_dibujo"
-uso = "fondo"
-tinta = "glaciacion"
-encaje = "editorial"
-recorte = "auto"
-url = "https://iiif.archive.org/iiif/primitiveman00figuiala$153/full/1800,/0/default.jpg"
-pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
-autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
-obra = "Primitive Man, fig. 68: artes del dibujo y la escultura en la época del reno"
-anio = 1870
-licencia = "Dominio público"
-atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 68. Internet Archive, dominio público."
 
 [[imagen]]
 id = "cap3_hombre"
@@ -549,3 +482,31 @@ obra = "Primitive Man, fig. 107: la primera fabricación y pulido de pedernales"
 anio = 1870
 licencia = "Dominio público"
 atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 107. Internet Archive, dominio público."
+
+[[imagen]]
+id = "cap3_navegantes"
+uso = "fondo"
+tinta = "neolitico"
+rotar = 90
+recorte = "auto"
+url = "https://iiif.archive.org/iiif/primitiveman00figuiala$231/full/1800,/0/default.jpg"
+pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
+autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
+obra = "Primitive Man, fig. 126: los primeros navegantes"
+anio = 1870
+licencia = "Dominio público"
+atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 126. Internet Archive, dominio público."
+
+[[imagen]]
+id = "cap3_fundicion"
+uso = "fondo"
+tinta = "neolitico"
+rotar = 90
+recorte = "auto"
+url = "https://iiif.archive.org/iiif/primitiveman00figuiala$273/full/1800,/0/default.jpg"
+pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
+autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
+obra = "Primitive Man, fig. 147: taller de fundición en la Edad del Bronce"
+anio = 1870
+licencia = "Dominio público"
+atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 147. Internet Archive, dominio público."

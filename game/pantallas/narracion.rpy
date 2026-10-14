@@ -15,6 +15,7 @@ screen bloque(who, what, posicion="abajo"):
         yanchor (0.0 if lateral else 1.0)
         xsize (720 if lateral else 800)
         has vbox
+        xfill True
         spacing 12
         hbox:
             xfill True

@@ -205,7 +205,7 @@ testsuite global:
         run Start("cap3")
         assert screen "portada" timeout 10
         advance until screen "explorar" timeout 240
-        click "Alfarero"
+        click "Pesca en el lago"
         assert screen "ficha" timeout 5
         click "Volver al paisaje"
         click "Continuar"

@@ -147,3 +147,9 @@ style marca_etiqueta:
     background Frame("gui/marco.png", 16, 16)
     padding (12, 8)
 
+
+style vscrollbar:
+    xsize 12
+    base_bar Solid(PAPEL_2)
+    thumb Solid(BOSQUE)
+    unscrollable "hide"

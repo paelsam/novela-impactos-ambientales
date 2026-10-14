@@ -17,7 +17,7 @@ screen main_menu():
         spacing 14
         text _("LOS ORÍGENES") style "kicker" xalign 0.5
         text _("Del ecosistema a la cultura") style "titulo_portada" xalign 0.5 text_align 0.5
-        text _("Basado en «La fragilidad ambiental de la cultura», de Augusto Ángel Maya") style "subtitulo" xalign 0.5 text_align 0.5
+        text _("Un recorrido por la relación entre sociedad, técnica y naturaleza") style "subtitulo" xalign 0.5 text_align 0.5
         text _("Introducción y capítulos 1, 2 y 3 · Universidad del Valle · Impactos Ambientales") style "pie" xalign 0.5
     vbox:
         xalign 0.5
@@ -45,6 +45,7 @@ screen indice():
                 alt cap.titulo
                 action Start(cap.id)
                 has vbox
+                xfill True
                 spacing 12
                 text cap.numero.upper() style "kicker"
                 text cap.titulo style "titulo"
@@ -72,7 +73,7 @@ screen creditos():
             for cap in CAPITULOS:
                 text "{} · {}".format(cap.presenta, cap.etiqueta) style "credito"
             null height 16
-            text _("Libro") style "titulo"
+            text _("Fuente") style "titulo"
             text _("Ángel Maya, A. (2015). La fragilidad ambiental de la cultura. Historia y medio ambiente (2.ª ed.). www.augustoangelmaya.com. Uso educativo sin ánimo de lucro, citando la fuente.") style "credito"
             null height 16
             text _("Ilustraciones") style "titulo"

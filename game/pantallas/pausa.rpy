@@ -17,6 +17,7 @@ screen pausa():
         yalign 0.5
         xsize 720
         has vbox
+        xfill True
         spacing 14
         text _("PAUSA") style "kicker" xalign 0.5
         textbutton _("Continuar") action Return() style "boton" xfill True
@@ -41,6 +42,7 @@ screen confirm(message, yes_action, no_action):
         yalign 0.5
         xsize 760
         has vbox
+        xfill True
         spacing 22
         text _(message) style "titulo" text_align 0.5 xalign 0.5
         hbox:
