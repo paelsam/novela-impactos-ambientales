@@ -27,3 +27,29 @@ label prueba_obs_uno:
 label prueba_obs_dos:
     ficha "Texto de la ficha dos, sin lámina." (show_titulo="Dos", show_pagina="p. 2") id prueba_obs_dos
     return
+
+label prueba_quiz:
+    $ abrir_capitulo("cap2")
+    scene menu_fondo
+    call prueba_quiz_bloque
+    call prueba_quiz_bloque
+    menu (screen="decision", pagina="p. 14"):
+        dilema "¿Decisión de prueba?" id prueba_dec
+        "Camino A":
+            segun "Según el libro, A." id prueba_dec_a
+        "Camino B":
+            segun "Según el libro, B." id prueba_dec_b
+    n "Fin de la prueba." id prueba_dec_fin
+    return
+
+label prueba_quiz_bloque:
+    menu (screen="quiz", quiz="prueba_quiz", pagina="p. 15"):
+        pregunta "¿Pregunta de prueba?" id prueba_quiz
+        "Opción incorrecta":
+            pass
+        "Opción correcta" (correcta=True):
+            pass
+        "Otra incorrecta":
+            pass
+    porque "Explicación de prueba." id prueba_quiz_porque
+    return

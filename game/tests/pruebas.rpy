@@ -76,4 +76,23 @@ testsuite global:
         click "Continuar"
         assert screen "bloque" timeout 5
 
+    testcase quiz:
+        run Start("prueba_quiz")
+        assert screen "quiz" timeout 5
+        click "Opción incorrecta"
+        assert screen "retroalimentacion" timeout 5
+        assert eval (aciertos == 0 and respondidas == {"prueba_quiz": False})
+        assert eval (estado_quiz.correcta == 1 and estado_quiz.elegida == 0)
+        advance
+        assert screen "quiz" timeout 5
+        keysym "K_2"
+        assert screen "retroalimentacion" timeout 5
+        assert eval (aciertos == 0)
+        advance
+        assert screen "decision" timeout 5
+        click "Camino B"
+        assert screen "segun" timeout 5
+        assert eval (estado_decision.elegida == 1)
+
+
 
