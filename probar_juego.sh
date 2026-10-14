@@ -35,7 +35,13 @@ WAYLAND_DISPLAY="$PANTALLA" SDL_VIDEODRIVER=wayland SDL_AUDIODRIVER=disk SDL_DIS
     > "$REGISTRO/recorrido.txt" 2>&1 || true
 kill -9 $COMPOSITOR 2>/dev/null || true
 grep -E "^\[rpytest\] (Status|Test cases|Assertions)" "$REGISTRO/recorrido.txt" | sort -u || true
-if ! grep -q "Status: PASSED" "$REGISTRO/recorrido.txt"; then
+# Criterio estricto: "Status: PASSED" no basta (aparece aunque un caso quede PENDING tras un timeout).
+RESUMEN="$(grep -E "^\[rpytest\] Test cases" "$REGISTRO/recorrido.txt" | tail -1)"
+cuenta() { echo "$RESUMEN" | grep -oE "[0-9]+ $1" | grep -oE "^[0-9]+" || echo 0; }
+if ! grep -q "Status: PASSED" "$REGISTRO/recorrido.txt" \
+    || [ "$(cuenta passed)" -lt 1 ] || [ "$(cuenta failed)" -ne 0 ] \
+    || [ "$(cuenta xpassed)" -ne 0 ] || [ "$(cuenta "not run")" -ne 0 ] \
+    || grep -qE "Traceback|RenpyTestTimeoutError" "$REGISTRO/recorrido.txt"; then
     grep -E "Error|assert|failed" "$REGISTRO/recorrido.txt" | head -20 || true
     echo "Recorrido con fallos (detalle en $REGISTRO/recorrido.txt)"
     exit 1

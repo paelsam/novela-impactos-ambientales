@@ -46,7 +46,7 @@ testsuite global:
         assert screen "portada" timeout 10
         assert eval (capitulo_actual == "cap2")
         advance
-        assert eval (capitulo_actual == "cap3") timeout 10
+        assert screen "bloque" timeout 10
 
     testcase creditos:
         assert screen "main_menu" timeout 10
@@ -125,6 +125,52 @@ testsuite global:
         advance until screen "fin" timeout 30
         click "Volver al menú"
         assert screen "main_menu" timeout 10
+
+    testcase cap2:
+        run Start("cap2")
+        assert screen "portada" timeout 10
+        advance until screen "explorar" timeout 180
+        click "Alce gigante"
+        assert screen "ficha" timeout 5
+        click "Volver al paisaje"
+        click "Continuar"
+        advance until screen "explorar" timeout 180
+        click "Continuar"
+        advance until screen "quiz" timeout 180
+        click "Cuando la fauna se agota"
+        assert eval (respondidas.get("cap2_quiz") is True) timeout 5
+        advance until screen "decision" timeout 60
+        click "Porque la fauna se agotaba"
+        assert screen "segun" timeout 5
+        advance until screen "nota_campo" timeout 60
+        advance until screen "idea_clave" timeout 60
+        advance until eval (capitulo_actual == "cap3") timeout 60
+
+    testcase capturas_cap2:
+        run Start("cap2")
+        assert screen "portada" timeout 10
+        pause 1.5
+        $ renpy.screenshot(config.basedir + "/.cache/capturas/cap2_1_portada.png")
+        advance
+        pause 1.5
+        $ renpy.screenshot(config.basedir + "/.cache/capturas/cap2_2_bloque_lateral.png")
+        advance until screen "explorar" timeout 180
+        pause 1.5
+        $ renpy.screenshot(config.basedir + "/.cache/capturas/cap2_3_explorar.png")
+        click "Alce gigante"
+        pause 1.5
+        $ renpy.screenshot(config.basedir + "/.cache/capturas/cap2_4_ficha.png")
+        click "Volver al paisaje"
+        click "Continuar"
+        advance until screen "explorar" timeout 240
+        click "Continuar"
+        advance until screen "quiz" timeout 240
+        pause 1.0
+        $ renpy.screenshot(config.basedir + "/.cache/capturas/cap2_5_quiz.png")
+        click "Las mejores armas"
+        pause 1.0
+        $ renpy.screenshot(config.basedir + "/.cache/capturas/cap2_6_retro.png")
+
 
 
 

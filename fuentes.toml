@@ -16,3 +16,121 @@ licencia = "CC BY 4.0"
 atribucion = "É. Riou, La Terre avant le déluge (1863), lámina 10. Wellcome Collection, CC BY 4.0."
 recorte = [63, 180, 2960, 1665]
 notas = "Sin el pie impreso."
+
+[[imagen]]
+id = "cap2_rio"
+uso = "fondo"
+tinta = "glaciacion"
+encaje = "editorial"
+recorte = "auto"
+url = "https://iiif.archive.org/iiif/primitiveman00figuiala$127/full/1800,/0/default.jpg"
+pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
+autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
+obra = "Primitive Man, fig. 40: abrigo rocoso de Bruniquel (época del reno)"
+anio = 1870
+licencia = "Dominio público"
+atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 40. Internet Archive, dominio público."
+
+[[imagen]]
+id = "cap2_glaciacion"
+uso = "fondo"
+tinta = "glaciacion"
+recorte = [63, 180, 2960, 1665]
+url = "https://upload.wikimedia.org/wikipedia/commons/7/74/An_ideal_landscape_in_the_Quaternary_epoch_with_bears%2C_elks_Wellcome_V0023204.jpg"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:An_ideal_landscape_in_the_Quaternary_epoch_with_bears,_elks_Wellcome_V0023204.jpg"
+autor = "Édouard Riou (grabado, a partir de E. Meunier)"
+obra = "La Terre avant le déluge (L. Figuier), lámina 10: paisaje ideal del Cuaternario"
+anio = 1863
+licencia = "CC BY 4.0"
+atribucion = "É. Riou, La Terre avant le déluge (1863), lámina 10. Wellcome Collection, CC BY 4.0."
+
+[[imagen]]
+id = "cap2_bosque"
+uso = "fondo"
+tinta = "bosque"
+recorte = "auto"
+centrado = [0.5, 0.75]
+url = "https://iiif.archive.org/iiif/primitiveman00figuiala$141/full/1800,/0/default.jpg"
+pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
+autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
+obra = "Primitive Man, fig. 52: la caza en la época del reno"
+anio = 1870
+licencia = "Dominio público"
+atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 52. Internet Archive, dominio público."
+
+[[imagen]]
+id = "cap2_arte"
+uso = "fondo"
+tinta = "bosque"
+encaje = "editorial"
+recorte = "auto"
+url = "https://iiif.archive.org/iiif/primitiveman00figuiala$153/full/1800,/0/default.jpg"
+pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
+autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
+obra = "Primitive Man, fig. 68: artes del dibujo y la escultura en la época del reno"
+anio = 1870
+licencia = "Dominio público"
+atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 68. Internet Archive, dominio público."
+
+[[imagen]]
+id = "lamina_mamut"
+uso = "lamina"
+tinta = "glaciacion"
+recorte = [1760, 880, 440, 320]
+url = "https://upload.wikimedia.org/wikipedia/commons/7/74/An_ideal_landscape_in_the_Quaternary_epoch_with_bears%2C_elks_Wellcome_V0023204.jpg"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:An_ideal_landscape_in_the_Quaternary_epoch_with_bears,_elks_Wellcome_V0023204.jpg"
+autor = "Édouard Riou (grabado, a partir de E. Meunier)"
+obra = "La Terre avant le déluge (L. Figuier), lámina 10: paisaje ideal del Cuaternario"
+anio = 1863
+licencia = "CC BY 4.0"
+atribucion = "É. Riou, La Terre avant le déluge (1863), lámina 10. Wellcome Collection, CC BY 4.0."
+
+[[imagen]]
+id = "lamina_alce"
+uso = "lamina"
+tinta = "glaciacion"
+recorte = [2340, 980, 340, 380]
+url = "https://upload.wikimedia.org/wikipedia/commons/7/74/An_ideal_landscape_in_the_Quaternary_epoch_with_bears%2C_elks_Wellcome_V0023204.jpg"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:An_ideal_landscape_in_the_Quaternary_epoch_with_bears,_elks_Wellcome_V0023204.jpg"
+autor = "Édouard Riou (grabado, a partir de E. Meunier)"
+obra = "La Terre avant le déluge (L. Figuier), lámina 10: paisaje ideal del Cuaternario"
+anio = 1863
+licencia = "CC BY 4.0"
+atribucion = "É. Riou, La Terre avant le déluge (1863), lámina 10. Wellcome Collection, CC BY 4.0."
+
+[[imagen]]
+id = "lamina_rinoceronte"
+uso = "lamina"
+tinta = "glaciacion"
+recorte = [1920, 1180, 420, 240]
+url = "https://upload.wikimedia.org/wikipedia/commons/7/74/An_ideal_landscape_in_the_Quaternary_epoch_with_bears%2C_elks_Wellcome_V0023204.jpg"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:An_ideal_landscape_in_the_Quaternary_epoch_with_bears,_elks_Wellcome_V0023204.jpg"
+autor = "Édouard Riou (grabado, a partir de E. Meunier)"
+obra = "La Terre avant le déluge (L. Figuier), lámina 10: paisaje ideal del Cuaternario"
+anio = 1863
+licencia = "CC BY 4.0"
+atribucion = "É. Riou, La Terre avant le déluge (1863), lámina 10. Wellcome Collection, CC BY 4.0."
+
+[[imagen]]
+id = "lamina_bisonte"
+uso = "lamina"
+tinta = "archivo"
+url = "https://upload.wikimedia.org/wikipedia/commons/2/2b/Altamira%2C_bison.jpg"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:Altamira,_bison.jpg"
+autor = "Artista del Paleolítico superior (cueva de Altamira)"
+obra = "Bisonte de la cueva de Altamira (Cantabria)"
+anio = "c. 15.000 a. C."
+licencia = "Dominio público"
+atribucion = "Bisonte de la cueva de Altamira. Wikimedia Commons, dominio público."
+
+[[imagen]]
+id = "lamina_levante"
+uso = "lamina"
+tinta = "archivo"
+url = "https://upload.wikimedia.org/wikipedia/commons/6/65/Cova_dels_cavalls.jpg"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:Cova_dels_cavalls.jpg"
+autor = "EmparMM (fotografía)"
+obra = "Figura antropomorfa, pintura rupestre de la Cova dels Cavalls (La Valltorta, Castellón)"
+anio = "s. f."
+licencia = "CC BY-SA 4.0"
+atribucion = "EmparMM, «Cova dels cavalls». Wikimedia Commons, CC BY-SA 4.0 (imagen entintada, misma licencia)."

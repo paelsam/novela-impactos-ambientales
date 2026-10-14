@@ -3,6 +3,7 @@ import re
 from pathlib import Path
 
 import pytest
+from generar_voz import leer_guion
 
 JUEGO = Path(__file__).parent.parent / "game"
 
@@ -87,3 +88,9 @@ def test_cada_quiz_tiene_una_correcta():
     capitulos = {p.name: p.read_text(encoding="utf-8") for p in (JUEGO / "capitulos").glob("*.rpy")}
     errores = verificar_quizzes(capitulos)
     assert not errores, "\n".join(errores)
+
+
+def test_bloques_caben_en_la_tarjeta():
+    for ident, texto in leer_guion(JUEGO).items():
+        limite = 55 if re.search(r"_\d\d$", ident) else 60
+        assert len(texto.split()) <= limite, f"{ident} tiene {len(texto.split())} palabras (máximo {limite})"
