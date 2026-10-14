@@ -1,0 +1,22 @@
+[project]
+name = "fragilidad-ambiental"
+version = "1.6.0"
+description = "Juego educativo en Ren'Py sobre La fragilidad ambiental de la cultura, con narración generada por Kokoro TTS."
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "kokoro>=0.9.4",
+    "numpy>=1.26",
+    "soundfile>=0.12",
+    "torch>=2.4",
+]
+
+# PyTorch solo para CPU: evita descargar varios GB de librerías CUDA que la
+# generación de voz no necesita.
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true

@@ -1,0 +1,23 @@
+# Python / uv
+.venv/
+__pycache__/
+
+# Ren'Py: caché, partidas y scripts compilados
+/game/cache/
+/game/saves/
+*.rpyc
+*.rpymc
+*.bak
+*.new
+*.old
+
+# Ren'Py: logs y archivos generados por el launcher
+/log.txt
+/errors.txt
+/traceback.txt
+/files.txt
+/image_cache.txt
+/save_dump.txt
+/dialogue.tab
+/dialogue.txt
+/strings.json
