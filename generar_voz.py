@@ -69,3 +69,107 @@ def texto_para_voz(texto: str) -> str:
     for escrito, hablado in PRONUNCIACION:
         texto = texto.replace(escrito, hablado)
     return " ".join(texto.split())
+
+
+def firma(texto_voz: str) -> str:
+    return hashlib.sha256(f"{VOZ}|{VELOCIDAD}|{texto_voz}".encode()).hexdigest()[:16]
+
+
+def planificar(lineas: dict[str, str], manifiesto: dict[str, str], existentes: set[str]) -> tuple[list[str], list[str]]:
+    """(ids a generar, ids huérfanos). Se genera si falta el archivo o cambió el texto."""
+    pendientes = [i for i, t in lineas.items()
+                  if i not in existentes or manifiesto.get(i) != firma(texto_para_voz(t))]
+    return pendientes, sorted(existentes - set(lineas))
+
+
+def duraciones(voces: Path = VOCES, medir=None) -> dict[str, float]:
+    """Minutos de voz por parte (intro, cap1…) a partir de los OGG generados.
+
+    Sigue la spec: no cuenta observaciones (_obs_) y, de las ramas de decisión
+    (<parte>_dec_<letra>), cuenta únicamente la rama más larga de cada parte.
+    """
+    if medir is None:
+        import soundfile as sf
+        medir = lambda ruta: sf.info(ruta).duration  # noqa: E731
+
+    re_rama = re.compile(r"^(?P<parte>[^_]+)_dec_[a-z0-9]+$")
+    segundos_fijos: dict[str, float] = {}
+    ramas_max: dict[str, float] = {}
+
+    for archivo in sorted(voces.glob("*.ogg")):
+        stem = archivo.stem
+        if "_obs_" in stem:
+            continue
+        parte = stem.split("_")[0]
+        m_rama = re_rama.match(stem)
+        dur = medir(archivo)
+        if m_rama:
+            ramas_max[parte] = max(ramas_max.get(parte, 0.0), dur)
+        else:
+            segundos_fijos[parte] = segundos_fijos.get(parte, 0.0) + dur
+
+    total: dict[str, float] = {}
+    todas_partes = sorted(set(segundos_fijos) | set(ramas_max))
+    for p in todas_partes:
+        seg = segundos_fijos.get(p, 0.0) + ramas_max.get(p, 0.0)
+        total[p] = round(seg / 60, 2)
+    return total
+
+
+def sintetizador_kokoro():
+    """Función texto → audio a 24 kHz. Importa Kokoro solo aquí porque carga PyTorch."""
+    import numpy as np
+    from kokoro import KPipeline
+
+    pipeline = KPipeline(lang_code="e")  # "e" = español
+
+    def sintetizar(texto: str):
+        trozos = [audio for _, _, audio in pipeline(texto, voice=VOZ, speed=VELOCIDAD)]
+        if not trozos:
+            raise RuntimeError(f"Kokoro no generó audio para: {texto[:60]}")
+        return np.concatenate(trozos)
+
+    return sintetizar
+
+
+def guardar_ogg(ruta: Path, audio) -> None:
+    import soundfile as sf
+    sf.write(ruta, audio, FRECUENCIA, format="OGG", subtype="VORBIS")
+
+
+def main(argv=None, sintetizador=None, guardar=guardar_ogg, raiz: Path = GUION, voces: Path = VOCES) -> int:
+    parser = argparse.ArgumentParser(description="Genera las voces del guion con Kokoro TTS.")
+    parser.add_argument("--revisar", action="store_true", help="solo muestra qué se generaría")
+    parser.add_argument("--duracion", action="store_true", help="minutos de voz por parte")
+    args = parser.parse_args(argv)
+    if args.duracion:
+        for parte, minutos in duraciones(voces).items():
+            print(f"{parte}: {minutos:.2f} min")
+        return 0
+    lineas = leer_guion(raiz)
+    ruta_manifiesto = voces / "manifest.json"
+    manifiesto = json.loads(ruta_manifiesto.read_text(encoding="utf-8")) if ruta_manifiesto.exists() else {}
+    pendientes, huerfanas = planificar(lineas, manifiesto, {p.stem for p in voces.glob("*.ogg")})
+    for ident in huerfanas:
+        print(f"Huérfana (ya no está en el guion): {ident}.ogg")
+    if not pendientes:
+        print("Todas las voces están al día.")
+        return 0
+    print(f"{len(pendientes)} voces por generar: {', '.join(pendientes)}")
+    if args.revisar:
+        return 0
+    sintetizar = sintetizador or sintetizador_kokoro()
+    voces.mkdir(parents=True, exist_ok=True)
+    for ident in pendientes:
+        texto = texto_para_voz(lineas[ident])
+        guardar(voces / f"{ident}.ogg", sintetizar(texto))
+        manifiesto[ident] = firma(texto)
+        ruta_manifiesto.write_text(json.dumps(manifiesto, ensure_ascii=False, indent=1, sort_keys=True),
+                                   encoding="utf-8")
+        print(f"Generada: {ident}.ogg")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+
