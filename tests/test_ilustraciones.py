@@ -3,8 +3,8 @@ import shapefile
 from PIL import Image, ImageDraw
 
 from ilustraciones import (
-    TINTAS, ErrorRegistro, Imagen, _hex, aplicar_tinta, cargar_registro, dibujar_mapa, encajar,
-    posicion_en_mapa, recorte_automatico, rotar_y_recortar,
+    TINTAS, UI, ErrorRegistro, Imagen, _hex, aplicar_tinta, cargar_registro, dibujar_mapa, encajar,
+    generar_ui, pieza, posicion_en_mapa, recorte_automatico, rotar_y_recortar,
 )
 
 ENTRADA = '''
@@ -164,3 +164,16 @@ def test_mapa_pinta_tierra_y_deja_el_mar_en_papel(tmp_path):
     assert img.getpixel((5, 5)) == papel
     x, y = posicion_en_mapa(5, 5, (-20, -20, 30, 30), tamano=(500, 500))
     assert img.getpixel((round(x * 500), round(y * 500))) != papel
+
+
+def test_pieza_tiene_esquinas_transparentes_y_centro_relleno():
+    img = pieza((96, 96), 12, "#F3ECDCF5", "#CBBE9F", 2)
+    assert img.mode == "RGBA" and img.size == (96, 96)
+    assert img.getpixel((0, 0))[3] == 0
+    assert all(abs(a - b) <= 1 for a, b in zip(img.getpixel((48, 48)), (0xF3, 0xEC, 0xDC, 0xF5)))
+
+
+def test_generar_ui_escribe_todas_las_piezas(tmp_path):
+    generar_ui(tmp_path)
+    assert sorted(p.stem for p in tmp_path.glob("*.png")) == sorted([*UI, "filete"])
+

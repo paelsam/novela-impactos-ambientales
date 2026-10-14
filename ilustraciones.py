@@ -39,6 +39,24 @@ MARGEN = 64
 ANCHO_EDITORIAL = LIENZO[0] - 3 * MARGEN - 720   # deja libre el panel lateral derecho (720 px)
 LAMINA_MAX = 900
 
+UI = {  # nombre: (tamaño, radio, relleno, borde, grosor) con la paleta de la spec §4
+    "marco": ((96, 96), 12, "#F3ECDCF5", "#CBBE9F", 1.5),
+    "boton": ((64, 64), 8, "#2E4A3A", None, 0),
+    "boton_hover": ((64, 64), 8, "#3D6450", None, 0),
+    "boton_sec": ((64, 64), 8, "#F3ECDCEB", "#2A2722", 2),
+    "boton_sec_hover": ((64, 64), 8, "#E9DFC8", "#2F6F8F", 4),
+    "opcion": ((96, 96), 10, "#F3ECDC", "#CBBE9F", 1.5),
+    "opcion_hover": ((96, 96), 10, "#F3ECDC", "#2F6F8F", 4),
+    "opcion_bien": ((96, 96), 10, "#E7EDDF", "#2E6B47", 3),
+    "opcion_mal": ((96, 96), 10, "#F3ECDC", "#9E3B2B", 3),
+    "letra": ((44, 44), 8, "#00000000", "#2A2722", 2),
+    "marca": ((56, 56), 28, "#F3ECDC", "#2A2722", 3),
+    "marca_hover": ((56, 56), 28, "#F3ECDC", "#2F6F8F", 4),
+    "marca_vista": ((56, 56), 28, "#E9DFC8", "#2A2722", 3),
+    "insignia_vista": ((28, 28), 14, "#2E6B47", None, 0),
+}
+GUI = RAIZ / "game" / "gui"
+
 
 class ErrorRegistro(ValueError):
     """El registro de fuentes tiene entradas incompletas o inválidas."""
@@ -228,3 +246,24 @@ def dibujar_mapa(ruta: Path, limites, tinta: str, tamano=LIENZO) -> Image.Image:
                 if len(anillo) >= 3:
                     d.polygon(anillo, fill=tierra, outline=oscuro, width=2)
     return img
+
+
+def pieza(tamano, radio, relleno, borde=None, grosor=0) -> Image.Image:
+    """Rectángulo redondeado con borde, dibujado a 4× para suavizar las esquinas."""
+    s = 4
+    w, h = tamano
+    img = Image.new("RGBA", (w * s, h * s), (0, 0, 0, 0))
+    ImageDraw.Draw(img).rounded_rectangle(
+        [0, 0, w * s - 1, h * s - 1], radius=radio * s, fill=_hex(relleno),
+        outline=_hex(borde) if borde else None, width=round(grosor * s))
+    return img.resize(tamano, Image.LANCZOS)
+
+
+def generar_ui(destino: Path = GUI) -> None:
+    destino.mkdir(parents=True, exist_ok=True)
+    for nombre, (tamano, radio, relleno, borde, grosor) in UI.items():
+        pieza(tamano, radio, relleno, borde, grosor).save(destino / f"{nombre}.png")
+    filete = Image.new("RGBA", (16, 16), (0, 0, 0, 0))   # filete musgo del "Por qué"
+    ImageDraw.Draw(filete).rectangle([0, 0, 4, 15], fill=_hex("#6B7A4B"))
+    filete.save(destino / "filete.png")
+
