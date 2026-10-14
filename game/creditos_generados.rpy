@@ -25,4 +25,6 @@ define CREDITOS_IMAGENES = [
     ('Grabado de una llama. Wellcome Collection, CC BY 4.0.', 'Engraving of a Llama', 'https://commons.wikimedia.org/wiki/File:Engraving_of_a_Llama_Wellcome_L0032831.jpg'),
     ('F. E. Köhler, Medizinal-Pflanzen (1887), amapola. Wikimedia Commons, dominio público.', "Köhler's Medizinal-Pflanzen: Papaver rhoeas (amapola)", 'https://commons.wikimedia.org/wiki/File:Papaver_rhoeas_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-101.jpg'),
     ('Encyclopaedia Britannica (1911), langosta migratoria. Wikimedia Commons, dominio público.', 'Locust: Pachytylus migratorius (langosta migratoria)', 'https://commons.wikimedia.org/wiki/File:EB1911_Locust_-_Pachytylus_migratorius.jpg'),
+    ('É. Bayard en L. Figuier, Primitive Man (1870), fig. 207. Internet Archive, dominio público.', 'Primitive Man, fig. 207: el cultivo de huertos (la semilla y el árbol)', 'https://archive.org/details/primitiveman00figuiala'),
+    ('JulianCandelo, «Manglar Buenaventura». Wikimedia Commons, CC BY-SA 4.0 (imagen entintada, misma licencia).', 'Manglar en Buenaventura (Valle del Cauca, Colombia)', 'https://commons.wikimedia.org/wiki/File:Manglar_Buenaventura.jpg'),
 ]

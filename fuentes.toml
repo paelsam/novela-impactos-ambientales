@@ -384,3 +384,29 @@ obra = "Locust: Pachytylus migratorius (langosta migratoria)"
 anio = 1911
 licencia = "Dominio público"
 atribucion = "Encyclopaedia Britannica (1911), langosta migratoria. Wikimedia Commons, dominio público."
+
+[[imagen]]
+id = "final_semilla"
+uso = "fondo"
+tinta = "bosque"
+rotar = 90
+recorte = "auto"
+url = "https://iiif.archive.org/iiif/primitiveman00figuiala$337/full/1800,/0/default.jpg"
+pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
+autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
+obra = "Primitive Man, fig. 207: el cultivo de huertos (la semilla y el árbol)"
+anio = 1870
+licencia = "Dominio público"
+atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 207. Internet Archive, dominio público."
+
+[[imagen]]
+id = "final_buenaventura"
+uso = "fondo"
+tinta = "bosque"
+url = "https://upload.wikimedia.org/wikipedia/commons/8/87/Manglar_Buenaventura.jpg"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:Manglar_Buenaventura.jpg"
+autor = "JulianCandelo (fotografía)"
+obra = "Manglar en Buenaventura (Valle del Cauca, Colombia)"
+anio = "s. f."
+licencia = "CC BY-SA 4.0"
+atribucion = "JulianCandelo, «Manglar Buenaventura». Wikimedia Commons, CC BY-SA 4.0 (imagen entintada, misma licencia)."

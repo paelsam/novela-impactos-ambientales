@@ -219,3 +219,12 @@ testsuite global:
         advance until screen "decision" timeout 60
         click "Los jóvenes fundan"
         advance until eval (capitulo_actual == "final") timeout 120
+
+    testcase final:
+        run Start("final")
+        assert screen "bloque" timeout 10
+        advance until screen "resumen" timeout 60
+        assert eval (len(respondidas) == 0)
+        advance until screen "fin" timeout 120
+        click "Volver al menú"
+        assert screen "main_menu" timeout 10
