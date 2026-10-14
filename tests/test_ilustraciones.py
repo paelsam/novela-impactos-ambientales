@@ -1,9 +1,10 @@
 import pytest
+import shapefile
 from PIL import Image, ImageDraw
 
 from ilustraciones import (
-    TINTAS, ErrorRegistro, Imagen, _hex, aplicar_tinta, cargar_registro, encajar, recorte_automatico,
-    rotar_y_recortar,
+    TINTAS, ErrorRegistro, Imagen, _hex, aplicar_tinta, cargar_registro, dibujar_mapa, encajar,
+    posicion_en_mapa, recorte_automatico, rotar_y_recortar,
 )
 
 ENTRADA = '''
@@ -137,3 +138,29 @@ def test_fondo_editorial_deja_libre_el_panel_derecho():
 
 def test_lamina_cabe_en_900():
     assert max(encajar(degradado(2000, 1000), entrada(uso="lamina")).size) == 900
+
+
+def test_posicion_del_centro_es_el_centro():
+    assert posicion_en_mapa(60, 47.5, (-15, 20, 135, 75)) == (0.5, 0.5)
+
+
+def test_posiciones_de_los_marcadores_de_los_capitulos():
+    eurasia = (-15, 20, 135, 75)
+    assert posicion_en_mapa(110, 35, eurasia) == (0.811, 0.638)    # China
+    assert posicion_en_mapa(-4, 40, eurasia) == (0.102, 0.583)     # España
+    mundo = (-120, -40, 80, 60)
+    assert posicion_en_mapa(-99, 19, mundo) == (0.131, 0.425)      # Mesoamérica
+
+
+def test_mapa_pinta_tierra_y_deja_el_mar_en_papel(tmp_path):
+    base = tmp_path / "tierra"
+    with shapefile.Writer(str(base), shapeType=shapefile.POLYGON) as w:
+        w.field("nombre", "C")
+        w.poly([[(0, 0), (0, 10), (10, 10), (10, 0), (0, 0)]])
+        w.record("cuadro")
+    img = dibujar_mapa(base.with_suffix(".shp"), (-20, -20, 30, 30), "neolitico", tamano=(500, 500))
+    papel = _hex(TINTAS["neolitico"][2])
+    assert img.size == (500, 500)
+    assert img.getpixel((5, 5)) == papel
+    x, y = posicion_en_mapa(5, 5, (-20, -20, 30, 30), tamano=(500, 500))
+    assert img.getpixel((round(x * 500), round(y * 500))) != papel

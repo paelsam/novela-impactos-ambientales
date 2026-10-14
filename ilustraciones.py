@@ -15,7 +15,8 @@ import tomllib
 from dataclasses import dataclass
 from pathlib import Path
 
-from PIL import Image, ImageFilter, ImageOps
+import shapefile
+from PIL import Image, ImageDraw, ImageFilter, ImageOps
 
 RAIZ = Path(__file__).parent
 REGISTRO = RAIZ / "fuentes.toml"
@@ -186,3 +187,44 @@ def encajar(img: Image.Image, imagen: Imagen) -> Image.Image:
         lienzo.paste(grabado, (MARGEN, (LIENZO[1] - alto) // 2))
         return lienzo
     return aplicar_tinta(ImageOps.fit(img, LIENZO, Image.LANCZOS, centering=imagen.centrado), imagen.tinta)
+
+
+def _proyector(limites, tamano):
+    """Proyección equirrectangular centrada con márgenes: (lon, lat) → píxeles."""
+    lon0, lat0, lon1, lat1 = limites
+    w, h = tamano
+    escala = min((w - 2 * MARGEN) / (lon1 - lon0), (h - 2 * MARGEN) / (lat1 - lat0))
+    ox = (w - escala * (lon1 - lon0)) / 2
+    oy = (h - escala * (lat1 - lat0)) / 2
+    return lambda lon, lat: (ox + (lon - lon0) * escala, oy + (lat1 - lat) * escala)
+
+
+def posicion_en_mapa(lon: float, lat: float, limites, tamano=LIENZO) -> tuple[float, float]:
+    """Posición relativa (0–1) de una coordenada; sirve para colocar los marcadores del juego."""
+    x, y = _proyector(limites, tamano)(lon, lat)
+    return round(x / tamano[0], 3), round(y / tamano[1], 3)
+
+
+def dibujar_mapa(ruta: Path, limites, tinta: str, tamano=LIENZO) -> Image.Image:
+    """Mapa de cuaderno: tierra en tono claro, costas en tinta y retícula cada 15° (spec §5)."""
+    oscuro, medio, papel = (_hex(c) for c in TINTAS[tinta])
+    punto = _proyector(limites, tamano)
+    lon0, lat0, lon1, lat1 = limites
+    img = Image.new("RGB", tamano, papel)
+    d = ImageDraw.Draw(img)
+    tierra = tuple(round(p + (m - p) * 0.35) for p, m in zip(papel, medio))
+    reticula = tuple(round(p + (o - p) * 0.15) for p, o in zip(papel, oscuro))
+    for lon in range(-180, 181, 15):
+        if lon0 <= lon <= lon1:
+            d.line([punto(lon, lat0), punto(lon, lat1)], fill=reticula, width=1)
+    for lat in range(-90, 91, 15):
+        if lat0 <= lat <= lat1:
+            d.line([punto(lon0, lat), punto(lon1, lat)], fill=reticula, width=1)
+    with shapefile.Reader(str(ruta)) as lector:
+        for forma in lector.shapes():
+            partes = list(forma.parts) + [len(forma.points)]
+            for a, b in zip(partes, partes[1:]):
+                anillo = [punto(lon, lat) for lon, lat in forma.points[a:b]]
+                if len(anillo) >= 3:
+                    d.polygon(anillo, fill=tierra, outline=oscuro, width=2)
+    return img
