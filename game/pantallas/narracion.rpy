@@ -27,7 +27,6 @@ screen bloque(who, what, posicion="abajo"):
         hbox:
             xfill True
             text _("R · repetir voz    A · automático") style "pie"
-            text pagina style "pie" xalign 1.0
 
 screen say(who, what):
     use bloque(who, what)

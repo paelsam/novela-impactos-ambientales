@@ -115,7 +115,6 @@ screen tarjeta_explicacion(etiqueta, what, pagina):
         spacing 6
         text etiqueta style "kicker"
         text what id "what" style "ficha_texto"
-    text pagina style "pie"
 
 screen retroalimentacion(who, what):
     $ e = estado_quiz

@@ -19,6 +19,7 @@ label cap1:
     $ pagina = "p. 10"
     n "Desde la perspectiva ambiental que presenta Ángel Maya, la historia comienza con el Homo sapiens. Antes de ese punto existe una zona ambigua entre la evolución biológica y la historia propiamente dicha." id cap1_01
     n "Los instrumentos rudimentarios, como los raspadores, aparecen en el registro del Pleistoceno. El libro menciona también la posibilidad de que el hombre de Pekín utilizara el fuego como defensa hace unos 500.000 años." id cap1_02
+    scene cap1_hombre at paneo with fundido
     n "Las herramientas y las pieles ayudaron a enfrentar condiciones ambientales que ya no resultaban propicias. La supervivencia empezó a depender también de recursos técnicos y de formas de adaptación cultural." id cap1_03
     $ pagina = "pp. 10–11"
     n "Al pasar de ambientes boscosos a espacios abiertos, los homínidos tuvieron que recorrer distancias y cooperar. Sin garras ni grandes colmillos, compensaron parte de sus limitaciones mediante instrumentos y organización." id cap1_04
@@ -31,6 +32,7 @@ label cap1:
     n "La caza de presas mayores era una empresa colectiva: requería instrumentos, organización y comunicación. Esa cooperación contribuyó a que los grupos pudieran extenderse fuera de regiones tropicales." id cap1_06
     n "La capacidad de cazar no dependía únicamente de la fuerza individual. El grupo compensaba la ausencia de garras o colmillos mediante la coordinación y el uso de herramientas." id cap1_07
     $ pagina = "p. 12"
+    scene cap1_caceria at paneo with fundido
     n "El libro describe una especialización regional de la caza: ciervos en China; toros y caballos en España; mamuts en Rusia y Europa Central; y renos en Francia." id cap1_08
 
     # Escena 1.3 · Mapa de la especialización

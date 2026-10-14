@@ -25,21 +25,26 @@ label cap3:
 
     # Escena 3.1 · Un poblado junto al agua
     $ pagina = "p. 18"
-    n "La domesticación y la agricultura constituyen, para el autor, una de las revoluciones más profundas de la historia humana; solo la época moderna puede compararse con ese cambio." id cap3_01
+    scene cap3_hombre at paneo with fundido
+    nl "La domesticación y la agricultura constituyen, para el autor, una de las revoluciones más profundas de la historia humana; solo la época moderna puede compararse con ese cambio." id cap3_01
+    scene cap3_pan at paneo with fundido
     n "Muchas de las plantas y animales que todavía alimentan a las sociedades actuales proceden de procesos de domesticación neolíticos. El trigo y la cebada siguen siendo ejemplos esenciales." id cap3_02
     $ pagina = "pp. 18–19"
     n "Con la agricultura, las comunidades empezaron a ganar autonomía respecto de algunas condiciones inmediatas del ecosistema: ya no solo aprovechaban recursos disponibles, sino que construían un medio ajustado a sus necesidades." id cap3_03
     $ pagina = "p. 19"
+    scene cap3_pesca at paneo with fundido
     n "La mayor seguridad alimentaria permitió el crecimiento de la población. El libro ofrece como ejemplo Mesopotamia, donde estima que la población se multiplicó por cuarenta entre el 8000 y el 4000 antes de Cristo." id cap3_04
     $ pagina = "pp. 19–20"
     n "Los poblados se establecieron cerca del agua. Cuando el suelo se agotaba, algunos jóvenes fundaban nuevos asentamientos, lo que contribuía a extender los poblados por el territorio." id cap3_05
+    scene cap3_poblado at paneo with fundido
     call explorar(cap3_puntos_poblado)
 
     # Escena 3.2 · Dos continentes, dos caminos
-    scene cap3_mapa with transformacion
     $ pagina = "pp. 20–21"
-    n "Los excedentes alimentarios favorecieron la división del trabajo y la aparición de nuevas técnicas: alfarería, tejidos de lino y lana, hachas pulimentadas, arado, rueda, vela y trabajo de metales como el cobre y el bronce." id cap3_06
+    scene cap3_tejedora at paneo with transformacion
+    nl "Los excedentes alimentarios favorecieron la división del trabajo y la aparición de nuevas técnicas: alfarería, tejidos de lino y lana, hachas pulimentadas, arado, rueda, vela y trabajo de metales como el cobre y el bronce." id cap3_06
     $ pagina = "pp. 21–25"
+    scene cap3_mapa with transformacion
     n "La domesticación no ocurrió de la misma manera en todas partes. En Eurasia se domesticaron, entre otras especies, trigo, cebada, cabras, ovejas, bueyes y caballos." id cap3_07
     n "En América se desarrollaron otros conjuntos de cultivos y animales, entre ellos maíz, calabaza, frijol, chile y llama. El libro destaca que no existían grandes herbívoros de tiro equivalentes a los de Eurasia." id cap3_08
     call explorar(cap3_puntos_mapa)

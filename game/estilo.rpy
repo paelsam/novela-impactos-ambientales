@@ -22,6 +22,7 @@ style default:
     size 34
     color TINTA
     language "unicode"
+    activate_sound "audio/sfx/clic.wav"
 
 style bloque:
     background Frame("gui/marco.png", 16, 16)
@@ -132,6 +133,7 @@ style marca:
     background "gui/marca.png"
     hover_background "gui/marca_hover.png"
     selected_background "gui/marca_vista.png"
+    selected_hover_background "gui/marca_hover.png"
     xysize (56, 56)
 
 style marca_num:

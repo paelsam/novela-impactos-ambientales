@@ -27,6 +27,7 @@ label intro:
     scene intro_herramientas at paneo with fundido
     nl "Los hallazgos arqueológicos añadieron otra clase de evidencia: herramientas y objetos que permiten reconstruir aspectos de la vida de sociedades que no dejaron relatos escritos." id intro_05
     nl "Ángel Maya llama a estos objetos «testimonios mudos de la historia». Su presencia ayuda a estudiar cómo las sociedades desarrollaron técnicas para relacionarse con el entorno." id intro_06
+    scene intro_pulido at paneo with fundido
     nl "La tesis que guía el libro es que la organización social está íntimamente vinculada a la transformación tecnológica de los ecosistemas. Sociedad, técnica y naturaleza no son historias separadas." id intro_07
     $ pagina = "p. 9"
     nl "Por eso, imaginar la historia como un escenario sin raíces en el medio es una trampa cultural. La crisis ambiental tampoco se resuelve únicamente con más tecnología: requiere pensar qué tipo de sociedad la utiliza." id intro_08

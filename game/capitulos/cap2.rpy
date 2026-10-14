@@ -22,6 +22,7 @@ label cap2:
     nl "Para Ángel Maya, con el Homo sapiens se consolida la evolución histórica y se acelera la cultura. Las formas de vida cambian junto con las capacidades técnicas y sociales." id cap2_01
     nl "Los ríos ofrecieron condiciones favorables para asentarse temporalmente o permanecer en ciertos lugares. En los periodos que menciona el libro, la población creció y se desarrollaron distintas formas de organización." id cap2_02
     $ pagina = "pp. 13–14"
+    scene cap2_banquete at paneo with fundido
     nl "El arco y el lanzador de venablos ampliaron las posibilidades de caza. La obtención de alimento dependía menos de una sola presa o de un único ambiente, aunque seguía ligada a los recursos disponibles." id cap2_03
     $ pagina = "p. 14"
     nl "El autor cuestiona la idea de que el cazador viviera necesariamente al borde del hambre: estima entre tres y cuatro horas diarias de caza, frente a unas sesenta horas semanales de trabajo para un agricultor." id cap2_04
@@ -34,9 +35,10 @@ label cap2:
     $ pagina = "p. 15"
     n "El fin de la glaciación, hace unos 13.000 años según el texto, llevó los bosques a las llanuras. Desaparecieron animales como el mamut lanudo, el rinoceronte lanudo y el alce gigante." id cap2_06
     call explorar(cap2_puntos_glaciacion)
-    scene cap2_bosque at paneo with transformacion
-    n "El autor plantea que la actividad humana pudo influir en esas desapariciones, por ejemplo mediante el uso del fuego para acorralar manadas. La explicación no atribuye todo al ser humano: el cambio climático también forma parte del contexto." id cap2_07
+    scene cap2_abrigo at paneo with transformacion
+    nl "El autor plantea que la actividad humana pudo influir en esas desapariciones, por ejemplo mediante el uso del fuego para acorralar manadas. La explicación no atribuye todo al ser humano: el cambio climático también forma parte del contexto." id cap2_07
     $ pagina = "pp. 15–16"
+    scene cap2_bosque at paneo with fundido
     n "El capítulo describe un círculo de agotamiento y técnica: de la lanza se pasó a los dardos y luego a las flechas, aumentando la eficacia de la caza. También cambiaron las relaciones sociales, con alianzas, comercio y guerra." id cap2_08
 
     # Escena 2.3 · La cueva pintada
@@ -45,7 +47,9 @@ label cap2:
     $ pagina = "pp. 16–17"
     nl "El capítulo presenta al ser humano como constructor de símbolos. Las imágenes pasan del realismo asociado al arte magdaleniense a formas más abstractas en el arte levantino." id cap2_09
     $ pagina = "p. 17"
+    scene cap2_dibujo at paneo with fundido
     nl "El autor vincula el instrumento y el símbolo: el instrumento condensa una teoría práctica, mientras que el símbolo puede abrir un camino hacia nuevas formas de acción." id cap2_10
+    scene cap2_arte at paneo with fundido
     call explorar(cap2_puntos_arte)
 
     # Quiz, decisión, nota de campo e idea clave

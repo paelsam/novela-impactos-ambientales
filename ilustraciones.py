@@ -52,7 +52,7 @@ LAMINA_MAX = 900
 UI = {  # nombre: (tamaño, radio, relleno, borde, grosor) con la paleta de la spec §4
     "marco": ((96, 96), 12, "#F3ECDCF5", "#CBBE9F", 1.5),
     "boton": ((64, 64), 8, "#2E4A3A", None, 0),
-    "boton_hover": ((64, 64), 8, "#3D6450", None, 0),
+    "boton_hover": ((64, 64), 8, "#3D6450", "#2F6F8F", 4),
     "boton_sec": ((64, 64), 8, "#F3ECDCEB", "#2A2722", 2),
     "boton_sec_hover": ((64, 64), 8, "#E9DFC8", "#2F6F8F", 4),
     "opcion": ((96, 96), 10, "#F3ECDC", "#CBBE9F", 1.5),

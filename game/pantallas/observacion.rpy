@@ -66,9 +66,8 @@ screen ficha(who, what, lamina=None, titulo="", leyenda="", pagina=""):
         hbox:
             xfill True
             text _("OBSERVACIÓN {} DE {}").format(numero, len(puntos_escena)) style "kicker"
-            text pagina style "kicker" xalign 1.0
         if lamina:
-            add lamina xysize (552, 300) fit "cover"
+            add lamina xysize (552, 220) fit "contain" xalign 0.5
             text leyenda style "leyenda"
         text titulo style "titulo"
         text what id "what" style "ficha_texto"

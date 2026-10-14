@@ -27,4 +27,12 @@ define CREDITOS_IMAGENES = [
     ('Encyclopaedia Britannica (1911), langosta migratoria. Wikimedia Commons, dominio público.', 'Locust: Pachytylus migratorius (langosta migratoria)', 'https://commons.wikimedia.org/wiki/File:EB1911_Locust_-_Pachytylus_migratorius.jpg'),
     ('É. Bayard en L. Figuier, Primitive Man (1870), fig. 207. Internet Archive, dominio público.', 'Primitive Man, fig. 207: el cultivo de huertos (la semilla y el árbol)', 'https://archive.org/details/primitiveman00figuiala'),
     ('JulianCandelo, «Manglar Buenaventura». Wikimedia Commons, CC BY-SA 4.0 (imagen entintada, misma licencia).', 'Manglar en Buenaventura (Valle del Cauca, Colombia)', 'https://commons.wikimedia.org/wiki/File:Manglar_Buenaventura.jpg'),
+    ('É. Bayard en L. Figuier, Primitive Man (1870), fig. 39. Internet Archive, dominio público.', 'Primitive Man, fig. 39: el hombre de la época del reno', 'https://archive.org/details/primitiveman00figuiala'),
+    ('É. Bayard en L. Figuier, Primitive Man (1870), fig. 40. Internet Archive, dominio público.', 'Primitive Man, fig. 40: abrigo rocoso de Bruniquel', 'https://archive.org/details/primitiveman00figuiala'),
+    ('É. Bayard en L. Figuier, Primitive Man (1870), fig. 41. Internet Archive, dominio público.', 'Primitive Man, fig. 41: un banquete en la época del reno', 'https://archive.org/details/primitiveman00figuiala'),
+    ('É. Bayard en L. Figuier, Primitive Man (1870), fig. 76. Internet Archive, dominio público.', 'Primitive Man, fig. 76: el hombre de la época de la piedra pulimentada', 'https://archive.org/details/primitiveman00figuiala'),
+    ('É. Bayard en L. Figuier, Primitive Man (1870), fig. 125. Internet Archive, dominio público.', 'Primitive Man, fig. 125: el arte de hacer pan en la Edad de Piedra', 'https://archive.org/details/primitiveman00figuiala'),
+    ('É. Bayard en L. Figuier, Primitive Man (1870), fig. 80. Internet Archive, dominio público.', 'Primitive Man, fig. 80: la pesca en la época de la piedra pulimentada', 'https://archive.org/details/primitiveman00figuiala'),
+    ('É. Bayard en L. Figuier, Primitive Man (1870), fig. 204. Internet Archive, dominio público.', 'Primitive Man, fig. 204: la primera tejedora', 'https://archive.org/details/primitiveman00figuiala'),
+    ('É. Bayard en L. Figuier, Primitive Man (1870), fig. 107. Internet Archive, dominio público.', 'Primitive Man, fig. 107: la primera fabricación y pulido de pedernales', 'https://archive.org/details/primitiveman00figuiala'),
 ]

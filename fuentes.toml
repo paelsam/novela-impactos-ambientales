@@ -410,3 +410,142 @@ obra = "Manglar en Buenaventura (Valle del Cauca, Colombia)"
 anio = "s. f."
 licencia = "CC BY-SA 4.0"
 atribucion = "JulianCandelo, «Manglar Buenaventura». Wikimedia Commons, CC BY-SA 4.0 (imagen entintada, misma licencia)."
+
+[[imagen]]
+id = "cap1_hombre"
+uso = "fondo"
+tinta = "glaciacion"
+centrado = [0.5, 0.15]
+recorte = "auto"
+url = "https://iiif.archive.org/iiif/primitiveman00figuiala$123/full/1800,/0/default.jpg"
+pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
+autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
+obra = "Primitive Man, fig. 39: el hombre de la época del reno"
+anio = 1870
+licencia = "Dominio público"
+atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 39. Internet Archive, dominio público."
+
+[[imagen]]
+id = "cap1_caceria"
+uso = "fondo"
+tinta = "glaciacion"
+recorte = "auto"
+url = "https://iiif.archive.org/iiif/primitiveman00figuiala$141/full/1800,/0/default.jpg"
+pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
+autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
+obra = "Primitive Man, fig. 52: la caza en la época del reno"
+anio = 1870
+licencia = "Dominio público"
+atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 52. Internet Archive, dominio público."
+
+[[imagen]]
+id = "cap2_abrigo"
+uso = "fondo"
+tinta = "glaciacion"
+encaje = "editorial"
+recorte = "auto"
+url = "https://iiif.archive.org/iiif/primitiveman00figuiala$127/full/1800,/0/default.jpg"
+pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
+autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
+obra = "Primitive Man, fig. 40: abrigo rocoso de Bruniquel"
+anio = 1870
+licencia = "Dominio público"
+atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 40. Internet Archive, dominio público."
+
+[[imagen]]
+id = "cap2_banquete"
+uso = "fondo"
+tinta = "glaciacion"
+rotar = 90
+recorte = "auto"
+url = "https://iiif.archive.org/iiif/primitiveman00figuiala$131/full/1800,/0/default.jpg"
+pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
+autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
+obra = "Primitive Man, fig. 41: un banquete en la época del reno"
+anio = 1870
+licencia = "Dominio público"
+atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 41. Internet Archive, dominio público."
+
+[[imagen]]
+id = "cap2_dibujo"
+uso = "fondo"
+tinta = "glaciacion"
+encaje = "editorial"
+recorte = "auto"
+url = "https://iiif.archive.org/iiif/primitiveman00figuiala$153/full/1800,/0/default.jpg"
+pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
+autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
+obra = "Primitive Man, fig. 68: artes del dibujo y la escultura en la época del reno"
+anio = 1870
+licencia = "Dominio público"
+atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 68. Internet Archive, dominio público."
+
+[[imagen]]
+id = "cap3_hombre"
+uso = "fondo"
+tinta = "neolitico"
+encaje = "editorial"
+recorte = "auto"
+url = "https://iiif.archive.org/iiif/primitiveman00figuiala$177/full/1800,/0/default.jpg"
+pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
+autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
+obra = "Primitive Man, fig. 76: el hombre de la época de la piedra pulimentada"
+anio = 1870
+licencia = "Dominio público"
+atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 76. Internet Archive, dominio público."
+
+[[imagen]]
+id = "cap3_pan"
+uso = "fondo"
+tinta = "neolitico"
+rotar = 90
+recorte = "auto"
+url = "https://iiif.archive.org/iiif/primitiveman00figuiala$225/full/1800,/0/default.jpg"
+pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
+autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
+obra = "Primitive Man, fig. 125: el arte de hacer pan en la Edad de Piedra"
+anio = 1870
+licencia = "Dominio público"
+atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 125. Internet Archive, dominio público."
+
+[[imagen]]
+id = "cap3_pesca"
+uso = "fondo"
+tinta = "neolitico"
+rotar = 90
+recorte = "auto"
+url = "https://iiif.archive.org/iiif/primitiveman00figuiala$187/full/1800,/0/default.jpg"
+pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
+autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
+obra = "Primitive Man, fig. 80: la pesca en la época de la piedra pulimentada"
+anio = 1870
+licencia = "Dominio público"
+atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 80. Internet Archive, dominio público."
+
+[[imagen]]
+id = "cap3_tejedora"
+uso = "fondo"
+tinta = "neolitico"
+encaje = "editorial"
+recorte = "auto"
+url = "https://iiif.archive.org/iiif/primitiveman00figuiala$331/full/1800,/0/default.jpg"
+pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
+autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
+obra = "Primitive Man, fig. 204: la primera tejedora"
+anio = 1870
+licencia = "Dominio público"
+atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 204. Internet Archive, dominio público."
+
+[[imagen]]
+id = "intro_pulido"
+uso = "fondo"
+tinta = "archivo"
+rotar = 90
+recorte = "auto"
+url = "https://iiif.archive.org/iiif/primitiveman00figuiala$205/full/1800,/0/default.jpg"
+pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
+autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
+obra = "Primitive Man, fig. 107: la primera fabricación y pulido de pedernales"
+anio = 1870
+licencia = "Dominio público"
+atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 107. Internet Archive, dominio público."

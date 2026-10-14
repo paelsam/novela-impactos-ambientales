@@ -13,6 +13,7 @@ screen main_menu():
         ypos 110
         xsize 1180
         has vbox
+        xfill True
         spacing 14
         text _("LOS ORÍGENES") style "kicker" xalign 0.5
         text _("Del ecosistema a la cultura") style "titulo_portada" xalign 0.5 text_align 0.5
@@ -50,7 +51,6 @@ screen indice():
                 null height 20
                 text _("Presenta") style "pie"
                 text cap.presenta style "subtitulo"
-                text "{} · ≈ 5 min".format(cap.paginas) style "pie"
     textbutton _("← Volver") action Return() style "boton_sec" xpos 96 ypos 940
 
 screen creditos():
@@ -103,5 +103,4 @@ screen portada(who, what):
         text cap.numero.upper() style "kicker" xalign 0.5
         text cap.titulo style "titulo_portada" xalign 0.5 text_align 0.5
         text _("Presenta: {}").format(cap.presenta) style "subtitulo" xalign 0.5
-        text cap.paginas style "pie" xalign 0.5
     text what id "what" color "#00000000"
