@@ -8,6 +8,14 @@ init python:
     MainMenu.__call__ = _safe_main_menu_call
     MainMenu.get_sensitive = lambda self: True
 
+    _orig_start_call = Start.__call__
+    def _safe_start_call(self):
+        if renpy.exports.context_nesting_level() > 0:
+            _orig_start_call(self)
+        else:
+            renpy.exports.jump(self.label)
+    Start.__call__ = _safe_start_call
+
     _orig_test_run_end = renpy.test.testreporter.reporter.test_run_end
     def _test_run_end_and_quit():
         _orig_test_run_end()
@@ -93,6 +101,31 @@ testsuite global:
         click "Camino B"
         assert screen "segun" timeout 5
         assert eval (estado_decision.elegida == 1)
+
+    testcase pausa:
+        run Start("prueba_narracion")
+        assert screen "bloque" timeout 5
+        keysym "K_ESCAPE"
+        assert screen "pausa" timeout 5
+        click "Reducir movimiento"
+        assert eval (persistent.reducir_movimiento)
+        click "Reducir movimiento"
+        assert eval (not persistent.reducir_movimiento)
+        click "Continuar"
+        assert screen "bloque" timeout 5
+
+    testcase cierre:
+        run Start("prueba_cierre")
+        assert screen "nota_campo" timeout 5
+        advance
+        assert screen "idea_clave" timeout 5
+        run Start("prueba_resumen")
+        assert screen "resumen" timeout 10
+        assert eval (aciertos == 0 and len(respondidas) == 0)
+        advance until screen "fin" timeout 30
+        click "Volver al menú"
+        assert screen "main_menu" timeout 10
+
 
 
 

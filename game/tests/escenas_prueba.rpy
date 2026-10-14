@@ -53,3 +53,19 @@ label prueba_quiz_bloque:
             pass
     porque "Explicación de prueba." id prueba_quiz_porque
     return
+
+label prueba_cierre:
+    $ abrir_capitulo("cap2")
+    scene menu_fondo
+    nota "Texto de una nota de campo de prueba." (show_fuente="Fuente de prueba") id prueba_nota
+    clave "Idea clave de prueba." id prueba_clave
+    return
+
+label prueba_resumen:
+    $ abrir_capitulo("final")
+    scene menu_fondo
+    show screen resumen
+    n "Línea final de prueba." id prueba_final
+    call screen fin
+    hide screen resumen
+    return
