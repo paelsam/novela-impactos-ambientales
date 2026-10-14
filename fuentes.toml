@@ -243,3 +243,144 @@ obra = "Land, 1:110m"
 anio = "s. f."
 licencia = "Dominio público"
 atribucion = "Mapa dibujado con datos de Natural Earth (naturalearthdata.com), dominio público."
+
+[[imagen]]
+id = "cap3_poblado"
+uso = "fondo"
+tinta = "neolitico"
+rotar = 90
+recorte = "auto"
+url = "https://iiif.archive.org/iiif/primitiveman00figuiala$289/full/1800,/0/default.jpg"
+pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
+autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
+obra = "Primitive Man, fig. 149: aldea lacustre suiza (Edad del Bronce)"
+anio = 1870
+licencia = "Dominio público"
+atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 149. Internet Archive, dominio público."
+
+[[imagen]]
+id = "cap3_huertos"
+uso = "fondo"
+tinta = "neolitico"
+rotar = 90
+recorte = "auto"
+url = "https://iiif.archive.org/iiif/primitiveman00figuiala$337/full/1800,/0/default.jpg"
+pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
+autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
+obra = "Primitive Man, fig. 207: el cultivo de huertos (Edad del Bronce)"
+anio = 1870
+licencia = "Dominio público"
+atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 207. Internet Archive, dominio público."
+
+[[imagen]]
+id = "lamina_alfarero"
+uso = "lamina"
+tinta = "neolitico"
+rotar = 90
+recorte = "auto"
+url = "https://iiif.archive.org/iiif/primitiveman00figuiala$87/full/1800,/0/default.jpg"
+pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
+autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
+obra = "Primitive Man, fig. 17: el primer alfarero"
+anio = 1870
+licencia = "Dominio público"
+atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 17. Internet Archive, dominio público."
+
+[[imagen]]
+id = "lamina_hacha"
+uso = "lamina"
+tinta = "neolitico"
+rotar = 90
+recorte = "auto"
+url = "https://iiif.archive.org/iiif/primitiveman00figuiala$205/full/1800,/0/default.jpg"
+pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
+autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
+obra = "Primitive Man, fig. 107: fabricación y pulido de las hachas de piedra"
+anio = 1870
+licencia = "Dominio público"
+atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 107. Internet Archive, dominio público."
+
+[[imagen]]
+id = "cap3_mapa"
+uso = "mapa"
+tinta = "neolitico"
+mapa = [-120, -40, 80, 60]
+url = "https://naciscdn.org/naturalearth/110m/physical/ne_110m_land.zip"
+pagina_fuente = "https://www.naturalearthdata.com/downloads/110m-physical-vectors/"
+autor = "Natural Earth"
+obra = "Land, 1:110m"
+anio = "s. f."
+licencia = "Dominio público"
+atribucion = "Mapa dibujado con datos de Natural Earth (naturalearthdata.com), dominio público."
+
+[[imagen]]
+id = "lamina_trigo"
+uso = "lamina"
+tinta = "neolitico"
+url = "https://upload.wikimedia.org/wikipedia/commons/c/cb/Illustration_Triticum_aestivum0.jpg"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:Illustration_Triticum_aestivum0.jpg"
+autor = "Otto Wilhelm Thomé"
+obra = "Flora von Deutschland, Österreich und der Schweiz: Triticum aestivum"
+anio = 1885
+licencia = "Dominio público"
+atribucion = "O. W. Thomé, Flora von Deutschland (1885), trigo. Wikimedia Commons, dominio público."
+
+[[imagen]]
+id = "lamina_cebada"
+uso = "lamina"
+tinta = "neolitico"
+url = "https://upload.wikimedia.org/wikipedia/commons/c/c4/Illustration_Hordeum_vulgare0.jpg"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:Illustration_Hordeum_vulgare0.jpg"
+autor = "Otto Wilhelm Thomé"
+obra = "Flora von Deutschland, Österreich und der Schweiz: Hordeum vulgare"
+anio = 1885
+licencia = "Dominio público"
+atribucion = "O. W. Thomé, Flora von Deutschland (1885), cebada. Wikimedia Commons, dominio público."
+
+[[imagen]]
+id = "lamina_maiz"
+uso = "lamina"
+tinta = "neolitico"
+url = "https://upload.wikimedia.org/wikipedia/commons/7/78/Aztecs_storing_maize.jpg"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:Aztecs_storing_maize.jpg"
+autor = "Bernardino de Sahagún y colaboradores nahuas"
+obra = "Códice Florentino: almacenamiento del maíz"
+anio = "c. 1577"
+licencia = "Dominio público"
+atribucion = "Códice Florentino (c. 1577), almacenamiento del maíz. Wikimedia Commons, dominio público."
+
+[[imagen]]
+id = "lamina_llama"
+uso = "lamina"
+tinta = "neolitico"
+url = "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Engraving_of_a_Llama_Wellcome_L0032831.jpg/3840px-Engraving_of_a_Llama_Wellcome_L0032831.jpg"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:Engraving_of_a_Llama_Wellcome_L0032831.jpg"
+autor = "Grabado anónimo (Wellcome Collection)"
+obra = "Engraving of a Llama"
+anio = "s. f."
+licencia = "CC BY 4.0"
+atribucion = "Grabado de una llama. Wellcome Collection, CC BY 4.0."
+
+[[imagen]]
+id = "lamina_amapola"
+uso = "lamina"
+tinta = "neolitico"
+url = "https://upload.wikimedia.org/wikipedia/commons/9/93/Papaver_rhoeas_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-101.jpg"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:Papaver_rhoeas_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-101.jpg"
+autor = "Franz Eugen Köhler"
+obra = "Köhler's Medizinal-Pflanzen: Papaver rhoeas (amapola)"
+anio = 1887
+licencia = "Dominio público"
+atribucion = "F. E. Köhler, Medizinal-Pflanzen (1887), amapola. Wikimedia Commons, dominio público."
+
+[[imagen]]
+id = "lamina_langosta"
+uso = "lamina"
+tinta = "neolitico"
+url = "https://upload.wikimedia.org/wikipedia/commons/6/63/EB1911_Locust_-_Pachytylus_migratorius.jpg"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:EB1911_Locust_-_Pachytylus_migratorius.jpg"
+autor = "Encyclopaedia Britannica (11.ª edición)"
+obra = "Locust: Pachytylus migratorius (langosta migratoria)"
+anio = 1911
+licencia = "Dominio público"
+atribucion = "Encyclopaedia Britannica (1911), langosta migratoria. Wikimedia Commons, dominio público."
