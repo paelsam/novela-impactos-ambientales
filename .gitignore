@@ -1,6 +1,11 @@
 # Python / uv
 .venv/
 __pycache__/
+.pytest_cache/
+
+# Herramientas locales: caché de descargas, capturas, compañero visual
+.cache/
+.superpowers/
 
 # Ren'Py: caché, partidas y scripts compilados
 /game/cache/
@@ -21,3 +26,6 @@ __pycache__/
 /dialogue.tab
 /dialogue.txt
 /strings.json
+
+# Material de referencia del curso (PDF de terceros): no se versiona
+/references/

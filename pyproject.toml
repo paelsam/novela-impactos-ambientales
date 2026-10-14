@@ -1,13 +1,20 @@
 [project]
 name = "fragilidad-ambiental"
-version = "1.6.0"
-description = "Juego educativo en Ren'Py sobre La fragilidad ambiental de la cultura, con narración generada por Kokoro TTS."
+version = "2.0.0"
+description = "Los orígenes: del ecosistema a la cultura. Novela visual en Ren'Py sobre La fragilidad ambiental de la cultura (Introducción y capítulos 1–3)."
 readme = "README.md"
-requires-python = ">=3.10,<3.13"
+requires-python = ">=3.11,<3.13"
 dependencies = [
+    "pillow>=11.0",
+    "pyshp>=2.3",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.3"]
+voz = [
     "kokoro>=0.9.4",
     "numpy>=1.26",
-    "soundfile>=0.12",
+    "soundfile>=0.13",
     "torch>=2.4",
 ]
 
@@ -20,3 +27,7 @@ torch = { index = "pytorch-cpu" }
 name = "pytorch-cpu"
 url = "https://download.pytorch.org/whl/cpu"
 explicit = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
