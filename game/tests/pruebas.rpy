@@ -171,7 +171,17 @@ testsuite global:
         pause 1.0
         $ renpy.screenshot(config.basedir + "/.cache/capturas/cap2_6_retro.png")
 
-
-
-
-
+    testcase intro:
+        run Start("intro")
+        assert screen "portada" timeout 10
+        advance until screen "explorar" timeout 180
+        click "La laguna"
+        assert screen "ficha" timeout 5
+        click "Volver al paisaje"
+        click "Continuar"
+        advance until screen "quiz" timeout 240
+        click "Una historia contada solo desde la política"
+        assert eval (respondidas.get("intro_quiz") is True) timeout 5
+        advance until screen "decision" timeout 60
+        click "Por la relación"
+        advance until eval (capitulo_actual == "cap1") timeout 120

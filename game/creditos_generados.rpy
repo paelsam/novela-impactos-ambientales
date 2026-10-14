@@ -7,4 +7,7 @@ define CREDITOS_IMAGENES = [
     ('É. Bayard en L. Figuier, Primitive Man (1870), fig. 68. Internet Archive, dominio público.', 'Primitive Man, fig. 68: artes del dibujo y la escultura en la época del reno', 'https://archive.org/details/primitiveman00figuiala'),
     ('Bisonte de la cueva de Altamira. Wikimedia Commons, dominio público.', 'Bisonte de la cueva de Altamira (Cantabria)', 'https://commons.wikimedia.org/wiki/File:Altamira,_bison.jpg'),
     ('EmparMM, «Cova dels cavalls». Wikimedia Commons, CC BY-SA 4.0 (imagen entintada, misma licencia).', 'Figura antropomorfa, pintura rupestre de la Cova dels Cavalls (La Valltorta, Castellón)', 'https://commons.wikimedia.org/wiki/File:Cova_dels_cavalls.jpg'),
+    ("Jacopo de' Barbari, vista de Venecia (1500). Google Art Project, dominio público.", 'Veduta di Venezia (vista de Venecia)', 'https://commons.wikimedia.org/wiki/File:Jacopo_de%27_Barbari_-_View_of_Venice_-_Google_Art_Project.jpg'),
+    ('Lartet y Christy, Reliquiae Aquitanicae (1875), lám. A-17. Biodiversity Heritage Library, dominio público.', 'Reliquiae Aquitanicae, lámina A-17: hachas de piedra de Le Moustier', 'https://commons.wikimedia.org/wiki/File:Reliquiae_aquitanicae--pl._A-17--BHL20495702.jpg'),
+    ('G. Doré, «Over London – by Rail», London: A Pilgrimage (1872). Yale Center for British Art, dominio público.', 'London: A Pilgrimage, «Over London – by Rail»', 'https://commons.wikimedia.org/wiki/File:YCBA_London_a_Pilgrimage_06_(cropped).jpg'),
 ]

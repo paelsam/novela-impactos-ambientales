@@ -134,3 +134,45 @@ obra = "Figura antropomorfa, pintura rupestre de la Cova dels Cavalls (La Vallto
 anio = "s. f."
 licencia = "CC BY-SA 4.0"
 atribucion = "EmparMM, «Cova dels cavalls». Wikimedia Commons, CC BY-SA 4.0 (imagen entintada, misma licencia)."
+
+[[imagen]]
+id = "intro_venecia"
+uso = "fondo"
+tinta = "archivo"
+recorte = [1000, 650, 1938, 1090]
+url = "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Jacopo_de%27_Barbari_-_View_of_Venice_-_Google_Art_Project.jpg/3840px-Jacopo_de%27_Barbari_-_View_of_Venice_-_Google_Art_Project.jpg"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:Jacopo_de%27_Barbari_-_View_of_Venice_-_Google_Art_Project.jpg"
+autor = "Jacopo de' Barbari"
+obra = "Veduta di Venezia (vista de Venecia)"
+anio = 1500
+licencia = "Dominio público"
+atribucion = "Jacopo de' Barbari, vista de Venecia (1500). Google Art Project, dominio público."
+notas = "Recorte sin el título VENETIE MD ni los vientos de la parte inferior."
+
+[[imagen]]
+id = "intro_herramientas"
+uso = "fondo"
+tinta = "archivo"
+encaje = "editorial"
+recorte = [250, 470, 2000, 2760]
+url = "https://upload.wikimedia.org/wikipedia/commons/8/82/Reliquiae_aquitanicae--pl._A-17--BHL20495702.jpg"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:Reliquiae_aquitanicae--pl._A-17--BHL20495702.jpg"
+autor = "Édouard Lartet y Henry Christy (ed. T. R. Jones)"
+obra = "Reliquiae Aquitanicae, lámina A-17: hachas de piedra de Le Moustier"
+anio = 1875
+licencia = "Dominio público"
+atribucion = "Lartet y Christy, Reliquiae Aquitanicae (1875), lám. A-17. Biodiversity Heritage Library, dominio público."
+notas = "Sin el encabezado ni los nombres del impresor."
+
+[[imagen]]
+id = "intro_londres"
+uso = "fondo"
+tinta = "industria"
+centrado = [0.5, 0.45]
+url = "https://upload.wikimedia.org/wikipedia/commons/0/0f/YCBA_London_a_Pilgrimage_06_%28cropped%29.jpg"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:YCBA_London_a_Pilgrimage_06_(cropped).jpg"
+autor = "Gustave Doré (grabado de A. F. Pannemaker)"
+obra = "London: A Pilgrimage, «Over London – by Rail»"
+anio = 1872
+licencia = "Dominio público"
+atribucion = "G. Doré, «Over London – by Rail», London: A Pilgrimage (1872). Yale Center for British Art, dominio público."
