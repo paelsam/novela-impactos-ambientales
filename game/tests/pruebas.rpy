@@ -209,3 +209,8 @@ testsuite global:
         assert eval (aciertos == 2 and len(respondidas) == 3)
         click "Créditos"
         assert screen "creditos" timeout 5
+
+    testcase volumenes:
+        assert eval (abs(_preferences.get_mixer("music") - VOLUMEN_MUSICA) < 0.01)
+        assert eval (abs(_preferences.get_mixer("sfx") - VOLUMEN_AMBIENTE) < 0.01)
+        assert eval (abs(_preferences.get_mixer("voice") - VOLUMEN_VOZ) < 0.01)
