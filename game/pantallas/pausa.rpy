@@ -3,34 +3,63 @@
 define _game_menu_screen = "pausa"
 
 style control_barra:
-    ysize 22
+    ysize 28
     left_bar Solid(BOSQUE)
-    right_bar Solid(PAPEL_2)
-    thumb None
+    right_bar Solid("#CFC3A6")
+    thumb "gui/insignia_vista.png"
+    thumb_offset 14
 
 screen pausa():
     tag menu
     add Solid(VELO)
     frame:
-        style "bloque"
+        style "lamina"
         xalign 0.5
         yalign 0.5
-        xsize 720
+        xsize 820
+        at entrada(0.0)
         has vbox
         xfill True
         spacing 14
-        text _("PAUSA") style "kicker" xalign 0.5
+        text _("❦  PAUSA") style "kicker" xalign 0.5
         textbutton _("Continuar") action Return() style "boton" xfill True
         textbutton _("Momentos") action ShowMenu("momentos") style "boton_sec" xfill True
-        textbutton (_("Voz: no") if preferences.get_mute("voice") else _("Voz: sí")) action Preference("voice mute", "toggle") style "boton_sec" xfill True
-        hbox:
-            spacing 20
-            text _("Volumen de la voz") style "pie" yalign 0.5
-            bar value Preference("voice volume") style "control_barra" xsize 380
-        textbutton (_("Modo automático: sí") if preferences.afm_enable else _("Modo automático: no")) action Preference("auto-forward", "toggle") style "boton_sec" xfill True
-        textbutton (_("Reducir movimiento: sí") if persistent.reducir_movimiento else _("Reducir movimiento: no")) action ToggleField(persistent, "reducir_movimiento") style "boton_sec" xfill True
+        use controles_sonido
         textbutton _("Menú principal") action MainMenu() style "boton_sec" xfill True
         textbutton _("Salir del juego") action Quit() style "boton_sec" xfill True
+
+## Opciones desde el menú principal: los mismos controles que la pausa.
+screen opciones():
+    tag menu
+    add "menu_fondo" at paneo
+    add Solid("#F3ECDCC7")
+    frame:
+        style "lamina"
+        xalign 0.5
+        yalign 0.5
+        xsize 820
+        at entrada(0.0)
+        has vbox
+        xfill True
+        spacing 14
+        text _("❦  OPCIONES") style "kicker" xalign 0.5
+        use controles_sonido
+        textbutton _("← Volver") action Return() style "boton" xfill True
+
+## Volumen de voz, música y ambiente, y preferencias de la presentación.
+screen controles_sonido():
+    grid 2 3:
+        xfill True
+        spacing 14
+        text _("Voz") style "pie" yalign 0.5
+        bar value Preference("voice volume") style "control_barra" xsize 520 xalign 1.0
+        text _("Música") style "pie" yalign 0.5
+        bar value Preference("music volume") style "control_barra" xsize 520 xalign 1.0
+        text _("Ambiente y efectos") style "pie" yalign 0.5
+        bar value Preference("sound volume") style "control_barra" xsize 520 xalign 1.0
+    textbutton (_("Voz: no") if preferences.get_mute("voice") else _("Voz: sí")) action Preference("voice mute", "toggle") style "boton_sec" xfill True
+    textbutton (_("Modo automático: sí") if preferences.afm_enable else _("Modo automático: no")) action Preference("auto-forward", "toggle") style "boton_sec" xfill True
+    textbutton (_("Reducir movimiento: sí") if persistent.reducir_movimiento else _("Reducir movimiento: no")) action ToggleField(persistent, "reducir_movimiento") style "boton_sec" xfill True
 
 screen confirm(message, yes_action, no_action):
     modal True

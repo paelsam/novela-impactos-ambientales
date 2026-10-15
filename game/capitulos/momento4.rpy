@@ -16,11 +16,13 @@ define m4_puntos_poblado = [
 
 label momento4:
     $ abrir_capitulo("m4")
-    play music "audio/ambiente/rio.wav" fadein 2.0 if_changed
+    play music "audio/musica/momento4.ogg" fadein 3.0 if_changed
+    play ambiente "audio/ambiente/rio.wav" fadein 2.0 if_changed
     scene m4_collage with fundido
     portada "Momento cuatro. Un cambio en la cultura." id m4_portada
 
     nl "La caza, la recolección y la pesca siguieron siendo importantes. Pero, poco a poco, la agricultura y la domesticación de animales cambiaron la forma de vivir: fue una de las revoluciones más profundas de la historia." id m4_01
+    call montaje(kicker(), [("m4_hombre", "El hombre de la época de la piedra pulimentada, según É. Bayard (1870).")])
 
     scene cap3_poblado at paneo with fundido
     n "Los poblados se volvieron más permanentes, casi siempre junto a fuentes de agua. Desde allí, las comunidades empezaron a intervenir de forma continua en el entorno para obtener alimento y organizar su vida." id m4_02

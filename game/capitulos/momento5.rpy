@@ -8,9 +8,12 @@ define m5_puntos_huertos = [
 
 label momento5:
     $ abrir_capitulo("m5")
-    play music "audio/ambiente/bosque.wav" fadein 2.0 if_changed
-    scene cap3_mapa with fundido
+    play music "audio/musica/momento4.ogg" fadein 3.0 if_changed
+    play ambiente "audio/ambiente/bosque.wav" fadein 2.0 if_changed
+    scene m5_fundicion at paneo with fundido
     portada "Momento cinco. La transformación de un paisaje." id m5_portada
+    call montaje(kicker(), [("m5_fundicion", "El Neolítico trajo el arado, la rueda, la vela y los metales: técnicas para transformar el entorno.")])
+    scene cap3_mapa with fundido
 
     n "Casi todas las plantas y animales que aún forman la base de la alimentación se domesticaron entonces: trigo, cebada, cabras y ovejas en Eurasia; maíz, frijol, calabaza y llama en América." id m5_01
 

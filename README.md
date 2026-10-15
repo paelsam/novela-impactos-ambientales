@@ -74,6 +74,13 @@ La voz suma unos 5 minutos y medio (de 0,3 a 1,1 min por momento); con observaci
 - La idea central (`clave`) cierra cada momento y debe coincidir con `IDEAS` en `game/sistema/capitulos.rpy`, que también alimenta el menú de momentos.
 - Varias láminas pequeñas se agrupan en un solo fondo con `montada(...)` y `pieza_collage(...)` (ver `m1_collage` en `momento1.rpy`).
 
+## Música, transiciones y opciones
+
+- **Música:** una pista por momento en `game/audio/musica/` (Kevin MacLeod, CC BY; Grieg por Musopen, dominio público), definida al inicio de cada `momentoN.rpy`. El ambiente (río, bosque, cueva) va por el canal `ambiente`.
+- **Volumen:** en **Opciones** (menú principal) o en la pausa (Esc) se ajustan por separado la voz, la música y el ambiente y efectos.
+- **Transiciones con imágenes:** `call montaje("RÓTULO", [("imagen", "pie de foto"), …])` muestra cada imagen unos 3 s con su rótulo (un clic la adelanta). El momento 6 tiene dos: «Lo que nos sostiene» y «Lo que lo amenaza».
+- **Logo:** `game/images/marca/logo_univalle.png` (Wikimedia Commons, dominio público), abajo a la izquierda del menú principal.
+
 ## Imágenes y voces
 
 ```bash

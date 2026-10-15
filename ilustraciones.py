@@ -29,7 +29,7 @@ REGISTRO = RAIZ / "fuentes.toml"
 CACHE = RAIZ / ".cache" / "ilustraciones"
 IMAGENES = RAIZ / "game" / "images"
 CREDITOS = RAIZ / "game" / "creditos_generados.rpy"
-AGENTE = "FragilidadVN/2.0 (proyecto educativo, Universidad del Valle)"
+AGENTE = "FragilidadVN/3.0 (proyecto educativo, Universidad del Valle; https://github.com/paelsam/novela-impactos-ambientales)"
 
 USOS = ("fondo", "lamina", "mapa")
 ENCAJES = ("cubrir", "editorial")

@@ -8,7 +8,6 @@ define build.name = "LosOrigenes"
 
 define config.window = "hide"
 define config.check_conflicting_properties = True
-define config.default_music_volume = 0.35
 
 ## La voz lee cada bloque: el texto aparece completo de inmediato.
 define config.default_text_cps = 0

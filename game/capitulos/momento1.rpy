@@ -15,7 +15,8 @@ define m1_puntos_venecia = [
 
 label momento1:
     $ abrir_capitulo("m1")
-    play music "audio/ambiente/rio.wav" fadein 2.0 if_changed
+    play music "audio/musica/momento1.ogg" fadein 3.0 if_changed
+    play ambiente "audio/ambiente/rio.wav" fadein 2.0 if_changed
     scene m1_collage with fundido
     portada "Momento uno. Una humanidad dentro del ecosistema." id m1_portada
 

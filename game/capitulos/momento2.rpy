@@ -3,15 +3,17 @@
 
 label momento2:
     $ abrir_capitulo("m2")
-    play music "audio/ambiente/cueva.wav" fadein 2.0 if_changed
+    play music "audio/musica/momento2.ogg" fadein 3.0 if_changed
+    play ambiente "audio/ambiente/cueva.wav" fadein 2.0 if_changed
     scene cap1_fuego at paneo with fundido
     portada "Momento dos. Persistir y adaptarse." id m2_portada
 
     n "En el Paleolítico, el ambiente ya no era del todo propicio. Sin garras ni grandes colmillos, los primeros homínidos sobrevivieron con instrumentos como los raspadores, con pieles para protegerse y, posiblemente, con el fuego." id m2_01
 
-    play music "audio/ambiente/bosque.wav" fadein 2.0 if_changed
+    play ambiente "audio/ambiente/bosque.wav" fadein 2.0 if_changed
     scene cap1_caza at paneo with fundido
     n "Cazar presas grandes no podía ser una hazaña individual: era una empresa colectiva que exigía instrumentos, organización y comunicación dentro del grupo." id m2_02
+    call montaje(kicker(), [("m2_banquete", "Un banquete en la época del reno, según lo imaginó É. Bayard en 1870.")])
 
     scene cap1_hombre at paneo with fundido
     n "Esa cooperación les permitió dejar el trópico y ocupar las estepas de tierras templadas. Así, sus capacidades técnicas y sociales empezaron a cambiar su relación con el ecosistema." id m2_03

@@ -9,7 +9,8 @@ define m3_puntos_glaciacion = [
 
 label momento3:
     $ abrir_capitulo("m3")
-    play music "audio/ambiente/bosque.wav" fadein 2.0 if_changed
+    play music "audio/musica/momento3.ogg" fadein 3.0 if_changed
+    play ambiente "audio/ambiente/bosque.wav" fadein 2.0 if_changed
     scene cap1_mapa with fundido
     portada "Momento tres. Cuando sobrevivir también transforma el entorno." id m3_portada
 

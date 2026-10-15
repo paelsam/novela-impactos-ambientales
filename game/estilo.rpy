@@ -128,6 +128,12 @@ style cita:
     line_spacing 8
     color TINTA_2
 
+style rotulo_texto:
+    font SERIF_CURSIVA
+    size 28
+    line_spacing 6
+    color TINTA
+
 style cita_final is cita:
     size 40
     line_spacing 12

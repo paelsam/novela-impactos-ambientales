@@ -338,3 +338,189 @@ anio = 1870
 licencia = "Dominio público"
 atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 126. Internet Archive, dominio público."
 
+[[imagen]]
+id = "m6_pescadores"
+uso = "fondo"
+tinta = "bosque"
+url = "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Pescadores_de_Pacifico.jpg/3840px-Pescadores_de_Pacifico.jpg"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:Pescadores_de_Pacifico.jpg"
+autor = "Duberb"
+obra = "Pescadores del Pacífico colombiano"
+anio = "s. f."
+licencia = "CC BY-SA 4.0"
+atribucion = "Duberb, «Pescadores del Pacífico colombiano». Wikimedia Commons, CC BY-SA 4.0 (imagen entintada)."
+
+[[imagen]]
+id = "m6_pesca"
+uso = "fondo"
+tinta = "bosque"
+url = "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Pesca_en_Juanchaco%2C_Buenaventura.jpg/3840px-Pesca_en_Juanchaco%2C_Buenaventura.jpg"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:Pesca_en_Juanchaco,_Buenaventura.jpg"
+autor = "Ricardo Hincapié Trujillo"
+obra = "Pesca en Juanchaco, Buenaventura"
+anio = "s. f."
+licencia = "CC BY-SA 4.0"
+atribucion = "Ricardo Hincapié Trujillo, «Pesca en Juanchaco, Buenaventura». Wikimedia Commons, CC BY-SA 4.0 (imagen entintada)."
+
+[[imagen]]
+id = "m6_botes"
+uso = "fondo"
+tinta = "bosque"
+url = "https://upload.wikimedia.org/wikipedia/commons/c/c0/Pescador_y_botes%2C_Juanchaco.jpg"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:Pescador_y_botes,_Juanchaco.jpg"
+autor = "Ricardo Hincapié Trujillo"
+obra = "Pescador y botes en Juanchaco"
+anio = "s. f."
+licencia = "CC BY-SA 4.0"
+atribucion = "Ricardo Hincapié Trujillo, «Pescador y botes en Juanchaco». Wikimedia Commons, CC BY-SA 4.0 (imagen entintada)."
+
+[[imagen]]
+id = "m6_manglar"
+uso = "fondo"
+tinta = "bosque"
+url = "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Manglar_PNN_Utr%C3%ADa.jpg/3840px-Manglar_PNN_Utr%C3%ADa.jpg"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:Manglar_PNN_Utr%C3%ADa.jpg"
+autor = "Biodiego88"
+obra = "Manglar del Parque Nacional Natural Utría"
+anio = "s. f."
+licencia = "CC BY 4.0"
+atribucion = "Biodiego88, «Manglar del Parque Nacional Natural Utría». Wikimedia Commons, CC BY 4.0 (imagen entintada)."
+
+[[imagen]]
+id = "m6_ballena"
+uso = "fondo"
+tinta = "bosque"
+url = "https://upload.wikimedia.org/wikipedia/commons/8/89/Ballena_jorobada_y_ballenato_en_Bah%C3%ADa_M%C3%A1laga.JPG"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:Ballena_jorobada_y_ballenato_en_Bah%C3%ADa_M%C3%A1laga.JPG"
+autor = "Jardín Botánico La Manigua"
+obra = "Ballena jorobada y ballenato en Bahía Málaga"
+anio = "s. f."
+licencia = "CC BY-SA 4.0"
+atribucion = "Jardín Botánico La Manigua, «Ballena jorobada y ballenato en Bahía Málaga». Wikimedia Commons, CC BY-SA 4.0 (imagen entintada)."
+
+[[imagen]]
+id = "m6_cultivos"
+uso = "fondo"
+tinta = "bosque"
+centrado = [0.5, 0.85]
+url = "https://upload.wikimedia.org/wikipedia/commons/c/c2/Paisaje_entre_nubes_con_cultivos_de_pl%C3%A1tano_en_la_Sierra_Nevada_de_Santa_Marta.jpg"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:Paisaje_entre_nubes_con_cultivos_de_pl%C3%A1tano_en_la_Sierra_Nevada_de_Santa_Marta.jpg"
+autor = "Juli 2000 her"
+obra = "Cultivos de plátano en la Sierra Nevada de Santa Marta"
+anio = "s. f."
+licencia = "CC BY-SA 4.0"
+atribucion = "Juli 2000 her, «Cultivos de plátano en la Sierra Nevada de Santa Marta». Wikimedia Commons, CC BY-SA 4.0 (imagen entintada)."
+
+[[imagen]]
+id = "m6_puerto"
+uso = "fondo"
+tinta = "industria"
+url = "https://upload.wikimedia.org/wikipedia/commons/0/0d/Puerto_de_buenaventura.jpg"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:Puerto_de_buenaventura.jpg"
+autor = "Jimysantandef"
+obra = "Puerto de Buenaventura"
+anio = "s. f."
+licencia = "CC BY-SA 3.0"
+atribucion = "Jimysantandef, «Puerto de Buenaventura». Wikimedia Commons, CC BY-SA 3.0 (imagen entintada)."
+
+[[imagen]]
+id = "m6_mineria"
+uso = "fondo"
+tinta = "industria"
+url = "https://upload.wikimedia.org/wikipedia/commons/f/f8/Miner%C3%ADa_ilegal_en_Quilichao_-_Colombia.jpg"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:Miner%C3%ADa_ilegal_en_Quilichao_-_Colombia.jpg"
+autor = "Lady Castro"
+obra = "Minería ilegal en Santander de Quilichao"
+anio = "s. f."
+licencia = "CC BY-SA 2.0"
+atribucion = "Lady Castro, «Minería ilegal en Santander de Quilichao». Wikimedia Commons, CC BY-SA 2.0 (imagen entintada)."
+
+[[imagen]]
+id = "m6_retroexcavadora"
+uso = "fondo"
+tinta = "industria"
+url = "https://upload.wikimedia.org/wikipedia/commons/e/eb/Retroexcavadora_-_Miner%C3%ADa_Ilegal_en_Colombia.jpg"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:Retroexcavadora_-_Miner%C3%ADa_Ilegal_en_Colombia.jpg"
+autor = "Lady Castro"
+obra = "Retroexcavadora en una mina ilegal"
+anio = "s. f."
+licencia = "CC BY-SA 2.0"
+atribucion = "Lady Castro, «Retroexcavadora en una mina ilegal». Wikimedia Commons, CC BY-SA 2.0 (imagen entintada)."
+
+[[imagen]]
+id = "m6_tala"
+uso = "fondo"
+tinta = "industria"
+url = "https://upload.wikimedia.org/wikipedia/commons/d/d0/Amazon_slash_and_burn_agriculture_Colombia_South_America.jpg"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:Amazon_slash_and_burn_agriculture_Colombia_South_America.jpg"
+autor = "Matt Zimmerman"
+obra = "Tala y quema en la Amazonía colombiana"
+anio = "s. f."
+licencia = "CC BY 2.0"
+atribucion = "Matt Zimmerman, «Tala y quema en la Amazonía colombiana». Wikimedia Commons, CC BY 2.0 (imagen entintada)."
+
+[[imagen]]
+id = "m6_deforestacion"
+uso = "fondo"
+tinta = "industria"
+url = "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Deforestaci%C3%B3n_piedemonte_amazonico.jpg/3840px-Deforestaci%C3%B3n_piedemonte_amazonico.jpg"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:Deforestaci%C3%B3n_piedemonte_amazonico.jpg"
+autor = "Biodiego88"
+obra = "Deforestación en el piedemonte amazónico"
+anio = "s. f."
+licencia = "CC BY 4.0"
+atribucion = "Biodiego88, «Deforestación en el piedemonte amazónico». Wikimedia Commons, CC BY 4.0 (imagen entintada)."
+
+[[imagen]]
+id = "m6_contaminacion"
+uso = "fondo"
+tinta = "industria"
+url = "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Contaminacion_R%C3%ADo_Magdalena_a_la_altura_de_la_ciudad_de_Neiva.jpg/3840px-Contaminacion_R%C3%ADo_Magdalena_a_la_altura_de_la_ciudad_de_Neiva.jpg"
+pagina_fuente = "https://commons.wikimedia.org/wiki/File:Contaminacion_R%C3%ADo_Magdalena_a_la_altura_de_la_ciudad_de_Neiva.jpg"
+autor = "CesarRincon"
+obra = "Contaminación del río Magdalena en Neiva"
+anio = "s. f."
+licencia = "Dominio público (CC0)"
+atribucion = "CesarRincon, «Contaminación del río Magdalena en Neiva». Wikimedia Commons, Dominio público (CC0) (imagen entintada)."
+
+[[imagen]]
+id = "m2_banquete"
+uso = "fondo"
+tinta = "glaciacion"
+rotar = 90
+recorte = "auto"
+url = "https://iiif.archive.org/iiif/primitiveman00figuiala$131/full/1800,/0/default.jpg"
+pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
+autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
+obra = "Primitive Man, fig. 41: un banquete en la época del reno"
+anio = 1870
+licencia = "Dominio público"
+atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 41. Internet Archive, dominio público."
+
+[[imagen]]
+id = "m4_hombre"
+uso = "fondo"
+tinta = "neolitico"
+centrado = [0.5, 0.25]
+recorte = "auto"
+url = "https://iiif.archive.org/iiif/primitiveman00figuiala$177/full/1800,/0/default.jpg"
+pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
+autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
+obra = "Primitive Man, fig. 76: el hombre de la época de la piedra pulimentada"
+anio = 1870
+licencia = "Dominio público"
+atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 76. Internet Archive, dominio público."
+
+[[imagen]]
+id = "m5_fundicion"
+uso = "fondo"
+tinta = "neolitico"
+rotar = 90
+recorte = "auto"
+url = "https://iiif.archive.org/iiif/primitiveman00figuiala$273/full/1800,/0/default.jpg"
+pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
+autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
+obra = "Primitive Man, fig. 147: taller de fundición en la Edad del Bronce"
+anio = 1870
+licencia = "Dominio público"
+atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 147. Internet Archive, dominio público."

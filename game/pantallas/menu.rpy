@@ -8,12 +8,13 @@ screen teclas_voz():
 
 screen main_menu():
     tag menu
+    on "show" action Stop("ambiente", fadeout=1.0)
     add "menu_fondo" at paneo
     frame:
         style "lamina"
         xalign 0.5
         ypos 90
-        xsize 1240
+        xsize 1500
         at entrada(0.1)
         has vbox
         xfill True
@@ -23,12 +24,20 @@ screen main_menu():
         text CITA_CENTRAL style "cita" xalign 0.5 text_align 0.5
     vbox:
         xalign 0.5
-        ypos 610
-        spacing 16
+        ypos 590
+        spacing 14
         textbutton _("Comenzar") action Start() style "boton" xminimum 440 at entrada(0.3)
         textbutton _("Momentos") action ShowMenu("momentos") style "boton_sec" xminimum 440 at entrada(0.38)
-        textbutton _("Créditos") action ShowMenu("creditos") style "boton_sec" xminimum 440 at entrada(0.46)
-        textbutton _("Salir") action Quit(confirm=True) style "boton_sec" xminimum 440 at entrada(0.54)
+        textbutton _("Opciones") action ShowMenu("opciones") style "boton_sec" xminimum 440 at entrada(0.46)
+        textbutton _("Créditos") action ShowMenu("creditos") style "boton_sec" xminimum 440 at entrada(0.54)
+        textbutton _("Salir") action Quit(confirm=True) style "boton_sec" xminimum 440 at entrada(0.62)
+    add "images/marca/logo_univalle.png":
+        xpos 64
+        ypos 1016
+        yanchor 1.0
+        fit "contain"
+        xysize (150, 215)
+        at entrada(0.7)
 
 ## Los seis momentos: título arriba y, debajo, la idea central de cada uno.
 screen momentos():
@@ -81,6 +90,13 @@ screen creditos():
             text _("Ilustraciones") style "titulo"
             for atribucion, obra, fuente in CREDITOS_IMAGENES:
                 text "{} — {}".format(atribucion, obra) style "credito"
+            null height 16
+            text _("Música") style "titulo"
+            for pista in CREDITOS_MUSICA:
+                text pista style "credito"
+            null height 16
+            text _("Logotipo") style "titulo"
+            text _("Logotipo de la Universidad del Valle. Wikimedia Commons («Univalle.svg»), dominio público.") style "credito"
             null height 16
             text _("Voz, tipografía y motor") style "titulo"
             text _("Narración sintética: Kokoro-82M (Apache-2.0), voz em_alex.") style "credito"
