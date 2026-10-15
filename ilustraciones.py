@@ -50,16 +50,18 @@ ANCHO_EDITORIAL = LIENZO[0] - 3 * MARGEN - 720   # deja libre el panel lateral d
 LAMINA_MAX = 900
 
 UI = {  # nombre: (tamaño, radio, relleno, borde, grosor) con la paleta de la spec §4
-    "marco": ((96, 96), 12, "#F3ECDCF5", "#CBBE9F", 1.5),
-    "boton": ((64, 64), 8, "#2E4A3A", None, 0),
-    "boton_hover": ((64, 64), 8, "#3D6450", "#2F6F8F", 4),
-    "boton_sec": ((64, 64), 8, "#F3ECDCEB", "#2A2722", 2),
-    "boton_sec_hover": ((64, 64), 8, "#E9DFC8", "#2F6F8F", 4),
-    "opcion": ((96, 96), 10, "#F3ECDC", "#CBBE9F", 1.5),
-    "opcion_hover": ((96, 96), 10, "#F3ECDC", "#2F6F8F", 4),
-    "opcion_bien": ((96, 96), 10, "#E7EDDF", "#2E6B47", 3),
-    "opcion_mal": ((96, 96), 10, "#F3ECDC", "#9E3B2B", 3),
-    "letra": ((44, 44), 8, "#00000000", "#2A2722", 2),
+    "marco": ((96, 96), 6, "#F3ECDCF5", "#CBBE9F", 1.5),
+    "boton": ((64, 64), 4, "#2E4A3A", None, 0),
+    "boton_hover": ((64, 64), 4, "#3D6450", "#C9B98F", 3),
+    "boton_sec": ((64, 64), 4, "#F3ECDCEB", "#2A2722", 2),
+    "boton_sec_hover": ((64, 64), 4, "#E6DCBF", "#2E4A3A", 3),
+    "opcion": ((96, 96), 4, "#F6F0E1", "#B7A882", 1.5),
+    "opcion_hover": ((96, 96), 4, "#E8DFC4", "#2E4A3A", 3),
+    "opcion_bien": ((96, 96), 4, "#DCEAD6", "#2E6B47", 4),
+    "opcion_mal": ((96, 96), 4, "#F3D8D0", "#9E3B2B", 4),
+    "letra": ((44, 44), 22, "#00000000", "#2A2722", 2),
+    "letra_bien": ((44, 44), 22, "#2E6B47", None, 0),
+    "letra_mal": ((44, 44), 22, "#9E3B2B", None, 0),
     "marca": ((56, 56), 28, "#F3ECDC", "#2A2722", 3),
     "marca_hover": ((56, 56), 28, "#F3ECDC", "#2F6F8F", 4),
     "marca_vista": ((56, 56), 28, "#E9DFC8", "#2A2722", 3),
@@ -276,6 +278,24 @@ def generar_ui(destino: Path = GUI) -> None:
     filete = Image.new("RGBA", (16, 16), (0, 0, 0, 0))   # filete musgo del "Por qué"
     ImageDraw.Draw(filete).rectangle([0, 0, 4, 15], fill=_hex("#6B7A4B"))
     filete.save(destino / "filete.png")
+    marco_grabado().save(destino / "marco_grabado.png")
+    marco_grabado(papel="#E8DFC4F7", tinta="#2E4A3A").save(destino / "marco_grabado_hover.png")
+
+
+def marco_grabado(lado: int = 120, papel: str = "#F3ECDCF7", tinta: str = "#2A2722") -> Image.Image:
+    """Marco de lámina antigua: filete exterior grueso, filete interior fino y esquinas marcadas.
+
+    Se usa como Frame de 22 px: las líneas quedan en el borde y no se deforman al estirar.
+    """
+    s = 4
+    img = Image.new("RGBA", (lado * s, lado * s), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    d.rectangle([0, 0, lado * s - 1, lado * s - 1], fill=_hex(papel), outline=_hex(tinta), width=3 * s)
+    d.rectangle([9 * s, 9 * s, (lado - 9) * s - 1, (lado - 9) * s - 1], outline=_hex(tinta), width=s)
+    for x in (9, lado - 9):
+        for y in (9, lado - 9):
+            d.rectangle([(x - 3) * s, (y - 3) * s, (x + 3) * s, (y + 3) * s], fill=_hex(tinta))
+    return img.resize((lado, lado), Image.LANCZOS)
 
 
 def descargar(url: str, cache: Path = CACHE, intentos: int = 4, espera: float = 3.0) -> Path:

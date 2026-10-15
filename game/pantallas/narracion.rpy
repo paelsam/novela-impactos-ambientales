@@ -14,12 +14,13 @@ screen bloque(who, what, posicion="abajo"):
         ypos (64 if lateral else 1016)
         yanchor (0.0 if lateral else 1.0)
         xsize (720 if lateral else 800)
+        at entrada(0.0, 14)
         has vbox
         xfill True
         spacing 12
         hbox:
             xfill True
-            text kicker() style "kicker"
+            text kicker() style "kicker" xmaximum (540 if lateral else 620)
             if prog:
                 text "{} / {}".format(prog[1], prog[2]) style "kicker" xalign 1.0
         text what id "what" style "narracion"

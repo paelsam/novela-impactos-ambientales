@@ -1,7 +1,7 @@
 ## Escenas mínimas para los recorridos automáticos. No viajan en los paquetes.
 
 label prueba_narracion:
-    $ abrir_capitulo("cap2")
+    $ abrir_capitulo("m3")
     scene expression Solid(PAPEL)
     n "Primera línea de prueba." id prueba_01
     nl "Segunda línea, en el panel lateral." id prueba_02
@@ -14,36 +14,36 @@ define prueba_puntos = [
 ]
 
 label prueba_observacion:
-    $ abrir_capitulo("cap2")
+    $ abrir_capitulo("m3")
     scene menu_fondo
     call explorar(prueba_puntos)
     n "Después de explorar." id prueba_obs_fin
     return
 
 label prueba_obs_uno:
-    ficha "Texto de la ficha uno." (show_lamina="menu_fondo", show_titulo="Uno", show_leyenda="Leyenda de prueba.", show_pagina="p. 1") id prueba_obs_uno
+    ficha "Texto de la ficha uno." (show_lamina="menu_fondo", show_titulo="Uno", show_leyenda="Leyenda de prueba.") id prueba_obs_uno
     return
 
 label prueba_obs_dos:
-    ficha "Texto de la ficha dos, sin lámina." (show_titulo="Dos", show_pagina="p. 2") id prueba_obs_dos
+    ficha "Texto de la ficha dos, sin lámina." (show_titulo="Dos") id prueba_obs_dos
     return
 
 label prueba_quiz:
-    $ abrir_capitulo("cap2")
+    $ abrir_capitulo("m3")
     scene menu_fondo
     call prueba_quiz_bloque
     call prueba_quiz_bloque
-    menu (screen="decision", pagina="p. 14"):
+    menu (screen="decision"):
         dilema "¿Decisión de prueba?" id prueba_dec
         "Camino A":
-            segun "Según el libro, A." id prueba_dec_a
+            segun "Explicación A." id prueba_dec_a
         "Camino B":
-            segun "Según el libro, B." id prueba_dec_b
+            segun "Explicación B." id prueba_dec_b
     n "Fin de la prueba." id prueba_dec_fin
     return
 
 label prueba_quiz_bloque:
-    menu (screen="quiz", quiz="prueba_quiz", pagina="p. 15"):
+    menu (screen="quiz", quiz="prueba_quiz"):
         pregunta "¿Pregunta de prueba?" id prueba_quiz
         "Opción incorrecta":
             pass
@@ -55,17 +55,14 @@ label prueba_quiz_bloque:
     return
 
 label prueba_cierre:
-    $ abrir_capitulo("cap2")
+    $ abrir_capitulo("m3")
     scene menu_fondo
-    nota "Texto de una nota de campo de prueba." (show_fuente="Fuente de prueba") id prueba_nota
     clave "Idea clave de prueba." id prueba_clave
     return
 
-label prueba_resumen:
-    $ abrir_capitulo("final")
+label prueba_fin:
+    $ abrir_capitulo("m6")
     scene menu_fondo
-    show screen resumen
     n "Línea final de prueba." id prueba_final
     call screen fin
-    hide screen resumen
     return

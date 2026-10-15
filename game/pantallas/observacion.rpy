@@ -38,7 +38,7 @@ screen explorar(puntos):
 
 define ficha = Character(None, screen="ficha")
 
-screen ficha(who, what, lamina=None, titulo="", leyenda="", pagina=""):
+screen ficha(who, what, lamina=None, titulo="", leyenda=""):
     $ p = punto_activo
     $ px = int(p.x * 1920)
     $ py = int(p.y * 1080)
@@ -58,6 +58,7 @@ screen ficha(who, what, lamina=None, titulo="", leyenda="", pagina=""):
     add Solid(PAPEL) xpos px - 1 ypos 150 xsize 3 ysize max(0, py - 150 - 32)
     frame:
         style "bloque"
+        at entrada(0.0, 14)
         xpos fx
         ypos 48
         xsize 620

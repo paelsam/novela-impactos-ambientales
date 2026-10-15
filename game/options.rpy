@@ -1,8 +1,8 @@
 ## Configuración general del juego (spec §7).
 
-define config.name = _("Los orígenes: del ecosistema a la cultura")
-define config.version = "2.0"
-define config.window_title = "Los orígenes: del ecosistema a la cultura"
+define config.name = _("Del primer cultivo al último manglar")
+define config.version = "3.0"
+define config.window_title = "Del primer cultivo al último manglar"
 define config.save_directory = "LosOrigenes-educativo"
 define build.name = "LosOrigenes"
 

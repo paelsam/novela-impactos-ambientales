@@ -18,10 +18,9 @@ recorte = [63, 180, 2960, 1665]
 notas = "Sin el pie impreso."
 
 [[imagen]]
-id = "cap2_rio"
-uso = "fondo"
-tinta = "glaciacion"
-encaje = "editorial"
+id = "lam_abrigo"
+uso = "lamina"
+tinta = "archivo"
 recorte = "auto"
 url = "https://iiif.archive.org/iiif/primitiveman00figuiala$127/full/1800,/0/default.jpg"
 pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
@@ -57,20 +56,6 @@ obra = "Primitive Man, fig. 52: la caza en la época del reno"
 anio = 1870
 licencia = "Dominio público"
 atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 52. Internet Archive, dominio público."
-
-[[imagen]]
-id = "cap2_arte"
-uso = "fondo"
-tinta = "bosque"
-encaje = "editorial"
-recorte = "auto"
-url = "https://iiif.archive.org/iiif/primitiveman00figuiala$153/full/1800,/0/default.jpg"
-pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
-autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
-obra = "Primitive Man, fig. 68: artes del dibujo y la escultura en la época del reno"
-anio = 1870
-licencia = "Dominio público"
-atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 68. Internet Archive, dominio público."
 
 [[imagen]]
 id = "lamina_mamut"
@@ -112,30 +97,6 @@ licencia = "CC BY 4.0"
 atribucion = "É. Riou, La Terre avant le déluge (1863), lámina 10. Wellcome Collection, CC BY 4.0."
 
 [[imagen]]
-id = "lamina_bisonte"
-uso = "lamina"
-tinta = "archivo"
-url = "https://upload.wikimedia.org/wikipedia/commons/2/2b/Altamira%2C_bison.jpg"
-pagina_fuente = "https://commons.wikimedia.org/wiki/File:Altamira,_bison.jpg"
-autor = "Artista del Paleolítico superior (cueva de Altamira)"
-obra = "Bisonte de la cueva de Altamira (Cantabria)"
-anio = "c. 15.000 a. C."
-licencia = "Dominio público"
-atribucion = "Bisonte de la cueva de Altamira. Wikimedia Commons, dominio público."
-
-[[imagen]]
-id = "lamina_levante"
-uso = "lamina"
-tinta = "archivo"
-url = "https://upload.wikimedia.org/wikipedia/commons/6/65/Cova_dels_cavalls.jpg"
-pagina_fuente = "https://commons.wikimedia.org/wiki/File:Cova_dels_cavalls.jpg"
-autor = "EmparMM (fotografía)"
-obra = "Figura antropomorfa, pintura rupestre de la Cova dels Cavalls (La Valltorta, Castellón)"
-anio = "s. f."
-licencia = "CC BY-SA 4.0"
-atribucion = "EmparMM, «Cova dels cavalls». Wikimedia Commons, CC BY-SA 4.0 (imagen entintada, misma licencia)."
-
-[[imagen]]
 id = "intro_venecia"
 uso = "fondo"
 tinta = "archivo"
@@ -150,10 +111,9 @@ atribucion = "Jacopo de' Barbari, vista de Venecia (1500). Google Art Project, d
 notas = "Recorte sin el título VENETIE MD ni los vientos de la parte inferior."
 
 [[imagen]]
-id = "intro_herramientas"
-uso = "fondo"
+id = "lam_hachas"
+uso = "lamina"
 tinta = "archivo"
-encaje = "editorial"
 recorte = [250, 470, 2000, 2760]
 url = "https://upload.wikimedia.org/wikipedia/commons/8/82/Reliquiae_aquitanicae--pl._A-17--BHL20495702.jpg"
 pagina_fuente = "https://commons.wikimedia.org/wiki/File:Reliquiae_aquitanicae--pl._A-17--BHL20495702.jpg"
@@ -204,32 +164,6 @@ obra = "Primitive Man, fig. 16: el hombre en la época del gran oso y el mamut"
 anio = 1870
 licencia = "Dominio público"
 atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 16. Internet Archive, dominio público."
-
-[[imagen]]
-id = "lamina_ciervo"
-uso = "lamina"
-tinta = "glaciacion"
-recorte = [100, 1560, 800, 560]
-url = "https://iiif.archive.org/iiif/primitiveman00figuiala$141/full/1800,/0/default.jpg"
-pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
-autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
-obra = "Primitive Man, fig. 52: la caza en la época del reno (detalle del ciervo)"
-anio = 1870
-licencia = "Dominio público"
-atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 52. Internet Archive, dominio público."
-
-[[imagen]]
-id = "lamina_reno"
-uso = "lamina"
-tinta = "glaciacion"
-recorte = [160, 560, 860, 1100]
-url = "https://iiif.archive.org/iiif/primitiveman00figuiala$123/full/1800,/0/default.jpg"
-pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
-autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
-obra = "Primitive Man, fig. 39: el hombre de la época del reno (detalle)"
-anio = 1870
-licencia = "Dominio público"
-atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 39. Internet Archive, dominio público."
 
 [[imagen]]
 id = "cap1_mapa"
@@ -300,42 +234,6 @@ licencia = "Dominio público"
 atribucion = "Mapa dibujado con datos de Natural Earth (naturalearthdata.com), dominio público."
 
 [[imagen]]
-id = "lamina_cebada"
-uso = "lamina"
-tinta = "neolitico"
-url = "https://upload.wikimedia.org/wikipedia/commons/c/c4/Illustration_Hordeum_vulgare0.jpg"
-pagina_fuente = "https://commons.wikimedia.org/wiki/File:Illustration_Hordeum_vulgare0.jpg"
-autor = "Otto Wilhelm Thomé"
-obra = "Flora von Deutschland, Österreich und der Schweiz: Hordeum vulgare"
-anio = 1885
-licencia = "Dominio público"
-atribucion = "O. W. Thomé, Flora von Deutschland (1885), cebada. Wikimedia Commons, dominio público."
-
-[[imagen]]
-id = "lamina_maiz"
-uso = "lamina"
-tinta = "neolitico"
-url = "https://upload.wikimedia.org/wikipedia/commons/7/78/Aztecs_storing_maize.jpg"
-pagina_fuente = "https://commons.wikimedia.org/wiki/File:Aztecs_storing_maize.jpg"
-autor = "Bernardino de Sahagún y colaboradores nahuas"
-obra = "Códice Florentino: almacenamiento del maíz"
-anio = "c. 1577"
-licencia = "Dominio público"
-atribucion = "Códice Florentino (c. 1577), almacenamiento del maíz. Wikimedia Commons, dominio público."
-
-[[imagen]]
-id = "lamina_llama"
-uso = "lamina"
-tinta = "neolitico"
-url = "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Engraving_of_a_Llama_Wellcome_L0032831.jpg/3840px-Engraving_of_a_Llama_Wellcome_L0032831.jpg"
-pagina_fuente = "https://commons.wikimedia.org/wiki/File:Engraving_of_a_Llama_Wellcome_L0032831.jpg"
-autor = "Grabado anónimo (Wellcome Collection)"
-obra = "Engraving of a Llama"
-anio = "s. f."
-licencia = "CC BY 4.0"
-atribucion = "Grabado de una llama. Wellcome Collection, CC BY 4.0."
-
-[[imagen]]
 id = "lamina_amapola"
 uso = "lamina"
 tinta = "neolitico"
@@ -358,20 +256,6 @@ obra = "Locust: Pachytylus migratorius (langosta migratoria)"
 anio = 1911
 licencia = "Dominio público"
 atribucion = "Encyclopaedia Britannica (1911), langosta migratoria. Wikimedia Commons, dominio público."
-
-[[imagen]]
-id = "final_semilla"
-uso = "fondo"
-tinta = "bosque"
-rotar = 90
-recorte = "auto"
-url = "https://iiif.archive.org/iiif/primitiveman00figuiala$337/full/1800,/0/default.jpg"
-pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
-autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
-obra = "Primitive Man, fig. 207: el cultivo de huertos (la semilla y el árbol)"
-anio = 1870
-licencia = "Dominio público"
-atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 207. Internet Archive, dominio público."
 
 [[imagen]]
 id = "final_buenaventura"
@@ -400,36 +284,8 @@ licencia = "Dominio público"
 atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 39. Internet Archive, dominio público."
 
 [[imagen]]
-id = "cap2_banquete"
-uso = "fondo"
-tinta = "glaciacion"
-rotar = 90
-recorte = "auto"
-url = "https://iiif.archive.org/iiif/primitiveman00figuiala$131/full/1800,/0/default.jpg"
-pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
-autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
-obra = "Primitive Man, fig. 41: un banquete en la época del reno"
-anio = 1870
-licencia = "Dominio público"
-atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 41. Internet Archive, dominio público."
-
-[[imagen]]
-id = "cap3_hombre"
-uso = "fondo"
-tinta = "neolitico"
-encaje = "editorial"
-recorte = "auto"
-url = "https://iiif.archive.org/iiif/primitiveman00figuiala$177/full/1800,/0/default.jpg"
-pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
-autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
-obra = "Primitive Man, fig. 76: el hombre de la época de la piedra pulimentada"
-anio = 1870
-licencia = "Dominio público"
-atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 76. Internet Archive, dominio público."
-
-[[imagen]]
-id = "cap3_pan"
-uso = "fondo"
+id = "lam_pan"
+uso = "lamina"
 tinta = "neolitico"
 rotar = 90
 recorte = "auto"
@@ -442,8 +298,8 @@ licencia = "Dominio público"
 atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 125. Internet Archive, dominio público."
 
 [[imagen]]
-id = "cap3_pesca"
-uso = "fondo"
+id = "lam_pesca"
+uso = "lamina"
 tinta = "neolitico"
 rotar = 90
 recorte = "auto"
@@ -456,10 +312,9 @@ licencia = "Dominio público"
 atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 80. Internet Archive, dominio público."
 
 [[imagen]]
-id = "cap3_tejedora"
-uso = "fondo"
+id = "lam_tejedora"
+uso = "lamina"
 tinta = "neolitico"
-encaje = "editorial"
 recorte = "auto"
 url = "https://iiif.archive.org/iiif/primitiveman00figuiala$331/full/1800,/0/default.jpg"
 pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
@@ -468,20 +323,6 @@ obra = "Primitive Man, fig. 204: la primera tejedora"
 anio = 1870
 licencia = "Dominio público"
 atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 204. Internet Archive, dominio público."
-
-[[imagen]]
-id = "intro_pulido"
-uso = "fondo"
-tinta = "archivo"
-rotar = 90
-recorte = "auto"
-url = "https://iiif.archive.org/iiif/primitiveman00figuiala$205/full/1800,/0/default.jpg"
-pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
-autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
-obra = "Primitive Man, fig. 107: la primera fabricación y pulido de pedernales"
-anio = 1870
-licencia = "Dominio público"
-atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 107. Internet Archive, dominio público."
 
 [[imagen]]
 id = "cap3_navegantes"
@@ -497,16 +338,3 @@ anio = 1870
 licencia = "Dominio público"
 atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 126. Internet Archive, dominio público."
 
-[[imagen]]
-id = "cap3_fundicion"
-uso = "fondo"
-tinta = "neolitico"
-rotar = 90
-recorte = "auto"
-url = "https://iiif.archive.org/iiif/primitiveman00figuiala$273/full/1800,/0/default.jpg"
-pagina_fuente = "https://archive.org/details/primitiveman00figuiala"
-autor = "Émile Bayard (dibujo); Louis Figuier (obra)"
-obra = "Primitive Man, fig. 147: taller de fundición en la Edad del Bronce"
-anio = 1870
-licencia = "Dominio público"
-atribucion = "É. Bayard en L. Figuier, Primitive Man (1870), fig. 147. Internet Archive, dominio público."

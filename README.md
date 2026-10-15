@@ -1,25 +1,28 @@
-# Los orígenes: del ecosistema a la cultura
+# Del primer cultivo al último manglar
 
-Novela visual interactiva (Ren'Py 8.5) para el curso **Impactos Ambientales** (Universidad del Valle, docente Diana Marcela Mendoza). Presenta la Introducción y los Caps. 1–3 de *La fragilidad ambiental de la cultura* (Augusto Ángel Maya, pp. 6–27) con paisajes de grabado entintados, voz narrada, observaciones, quices y decisiones.
+> “La cultura no solo vive dentro de la naturaleza: la transforma, y de nosotros depende que esa transformación no destruya lo que nos sostiene”
 
-| Parte | Integrante | Archivo |
+Novela visual interactiva (Ren'Py 8.5) para el curso **Impactos Ambientales** (Universidad del Valle, docente Diana Marcela Mendoza). Sintetiza en seis momentos la Introducción y los Caps. 1–3 de *La fragilidad ambiental de la cultura* (Augusto Ángel Maya, pp. 6–27), para una presentación de unos 10 minutos, con grabados entintados, voz narrada, observaciones y quices.
+
+| Momento | Presenta | Archivo |
 | --- | --- | --- |
-| Introducción · pp. 6–9 | Elkin Samir Angulo Panameño | `game/capitulos/intro.rpy` |
-| Cap. 1 · El lejano Paleolítico · pp. 10–12 | Sebastián Bolaños Morales | `game/capitulos/cap1.rpy` |
-| Cap. 2 · Del Homo sapiens al Neolítico · pp. 13–17 | María Fernanda Cano Cobo | `game/capitulos/cap2.rpy` |
-| Cap. 3 · El cercano Neolítico · pp. 18–27 | Javier Felipe Contreras Díaz | `game/capitulos/cap3.rpy` |
-| Reflexión final (Buenaventura, la semilla y el árbol) | Todo el equipo | `game/capitulos/final.rpy` |
+| 1 · Una humanidad dentro del ecosistema (Introducción) | Elkin Samir Angulo Panameño | `game/capitulos/momento1.rpy` |
+| 2 · Persistir y adaptarse (Cap. 1) | Sebastián Bolaños Morales | `game/capitulos/momento2.rpy` |
+| 3 · Cuando sobrevivir también transforma el entorno (Caps. 1–2) | María Fernanda Cano Cobo | `game/capitulos/momento3.rpy` |
+| 4 · Un cambio en la cultura (Cap. 3) | Javier Felipe Contreras Díaz | `game/capitulos/momento4.rpy` |
+| 5 · La transformación de un paisaje (Cap. 3) | Javier Felipe Contreras Díaz | `game/capitulos/momento5.rpy` |
+| 6 · Del pasado al presente (Buenaventura) | Todo el equipo | `game/capitulos/momento6.rpy` |
 
-Los textos narrados son los del guion del equipo (`references/`). El cierre sobre Buenaventura es una conexión preparada por el equipo, no un dato del libro.
+Cada momento tiene de 2 a 4 cuadros de texto narrados (el 6, uno solo). Los textos sintetizan el libro en tono documental; el cierre sobre Buenaventura es una conexión preparada por el equipo. La versión anterior por capítulos quedó en el release `v1.0`.
 
 ## Presentar en Google Meet
 
 1. Abre la versión publicada en Vercel (ver «Publicar en Vercel») o, sin internet, genérala y sírvela: `./desplegar.sh --solo-compilar && python3 -m http.server 8000 --directory .cache/web`.
 2. Ábrela en **Chrome** (`http://localhost:8000` en local).
 3. En Meet: **Presentar → Una pestaña →** la del juego, y marca **«Compartir también el audio de la pestaña»**.
-4. Respaldo sin internet ni navegador: el paquete de escritorio (`.cache/dist/LosOrigenes-2.0-pc.zip`).
+4. Respaldo sin internet ni navegador: el paquete de escritorio (`.cache/dist/LosOrigenes-3.0-pc.zip`).
 
-Cada parte dura unos 3 minutos de voz, más las observaciones, el quiz y la decisión.
+La voz suma unos 5 minutos y medio (de 0,3 a 1,1 min por momento); con observaciones y quices, la presentación cabe en unos 10 minutos.
 
 ## Controles
 
@@ -47,9 +50,9 @@ Cada parte dura unos 3 minutos de voz, más las observaciones, el quiz y la deci
 ```text
 .
 ├── game/
-│   ├── capitulos/        # contenido: una parte por integrante
+│   ├── capitulos/        # contenido: un archivo por momento
 │   ├── sistema/          # capítulos, voz, exploración, respuestas
-│   ├── pantallas/        # menú, narración, observación, quiz, notas, pausa
+│   ├── pantallas/        # menú y momentos, narración, observación, quiz, idea central y cierre, pausa
 │   ├── images/           # fondos/ y laminas/ (generados por ilustraciones.py)
 │   ├── gui/              # piezas de interfaz (generadas)
 │   ├── fonts/            # Literata y Atkinson Hyperlegible
@@ -67,8 +70,9 @@ Cada parte dura unos 3 minutos de voz, más las observaciones, el quiz y la deci
 
 - Cada línea hablada es **una sola línea** con `id` único y sin `[...]`: `n "Texto." id cap2_03` (`nl` la muestra en el panel lateral). La voz se busca por ese `id`.
 - Observación: `call explorar(lista_de_puntos)` con `Punto("id", x, y, "Etiqueta", "label_de_la_ficha")`; `x` e `y` son fracciones de la imagen.
-- Quiz: `menu (screen="quiz", quiz="capN_quiz", pagina="p. 15")` con exactamente una opción `(correcta=True)`. Decisión: `menu (screen="decision", pagina=…)`; cada opción termina en un `segun "…" id …`.
-- Nota de campo (`nota`) e idea clave (`clave`) cierran cada parte. El índice y las ideas clave están en `game/sistema/capitulos.rpy`.
+- Quiz: `menu (screen="quiz", quiz="mN_quiz")` con exactamente una opción `(correcta=True)`. Decisión: `menu (screen="decision")`; cada opción termina en un `segun "…" id …`.
+- La idea central (`clave`) cierra cada momento y debe coincidir con `IDEAS` en `game/sistema/capitulos.rpy`, que también alimenta el menú de momentos.
+- Varias láminas pequeñas se agrupan en un solo fondo con `montada(...)` y `pieza_collage(...)` (ver `m1_collage` en `momento1.rpy`).
 
 ## Imágenes y voces
 

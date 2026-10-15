@@ -180,7 +180,7 @@ def test_pieza_tiene_esquinas_transparentes_y_centro_relleno():
 
 def test_generar_ui_escribe_todas_las_piezas(tmp_path):
     generar_ui(tmp_path)
-    assert sorted(p.stem for p in tmp_path.glob("*.png")) == sorted([*UI, "filete"])
+    assert sorted(p.stem for p in tmp_path.glob("*.png")) == sorted([*UI, "filete", "marco_grabado", "marco_grabado_hover"])
 
 
 def test_descargar_usa_cache(tmp_path):

@@ -21,7 +21,7 @@ screen pausa():
         spacing 14
         text _("PAUSA") style "kicker" xalign 0.5
         textbutton _("Continuar") action Return() style "boton" xfill True
-        textbutton _("Capítulos") action ShowMenu("indice") style "boton_sec" xfill True
+        textbutton _("Momentos") action ShowMenu("momentos") style "boton_sec" xfill True
         textbutton (_("Voz: no") if preferences.get_mute("voice") else _("Voz: sí")) action Preference("voice mute", "toggle") style "boton_sec" xfill True
         hbox:
             spacing 20
